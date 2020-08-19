@@ -1,6 +1,5 @@
-# alterdata-voting-rest-api
+# luafalcao-ntier-aspnetcore-api
 
-Este projeto hospeda uma web api para o processo seletivo da Alterdata, cujo objetivo é oferecer funcionalidades que permita aos usuários votarem em diferentes recursos  para que sejam selecionados pelo time de desenvolvimento. Estes recursos agregam valor aos clientes da empresa e serão priorizados mediante uma votação onde todos os funcionários da companhia poderão participar.
 
 ## Estrutura
 
