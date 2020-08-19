@@ -33,6 +33,7 @@ namespace luafalcao.api.Web
 
             services.AddAuthentication();
             services.ConfigureIdentity();
+            services.ConfigureJwt(Configuration);
 
             services.AddControllers()
                 .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);

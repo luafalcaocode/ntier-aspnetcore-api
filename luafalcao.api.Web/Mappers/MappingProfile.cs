@@ -2,6 +2,8 @@
 using luafalcao.api.Persistence.DataTransferObjects;
 
 using AutoMapper;
+using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
+using luafalcao.api.Shared.Utils;
 
 namespace luafalcao.api.Web.Mappers
 {
@@ -9,14 +11,13 @@ namespace luafalcao.api.Web.Mappers
     {
         public MappingProfile()
         {
-            CreateMap<Artigo, ArtigoDto>()
-                .ForMember(a => a.DataPublicacao, options => options.MapFrom(model => model.DataPublicacao.ToShortDateString()));
+            CreateMap<UsuarioDto, Usuario>()
+                .ForMember(usuarioEntity => usuarioEntity.UserName, option => option.MapFrom(usuarioDto => usuarioDto.Email));
+            CreateMap<Usuario, UsuarioDto>()
+                .ForMember(usuarioDto => usuarioDto.Email, option => option.MapFrom(usuarioEntity => usuarioEntity.Email));
 
-            CreateMap<Comentario, ComentarioDto>()
-                .ForMember(a => a.DataPublicacao, options => options.MapFrom(model => model.DataPublicacao.ToShortDateString()));
 
-            CreateMap<UsuarioDto, Usuario>();
-                
+            CreateMap(typeof(Message<>), typeof(Message<>));
         }
     }
 }

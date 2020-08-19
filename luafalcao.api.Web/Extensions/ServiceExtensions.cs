@@ -15,6 +15,10 @@ using luafalcao.api.Persistence.Entities;
 using Microsoft.AspNetCore.Identity;
 using luafalcao.api.Domain.Contracts.Adapters;
 using luafalcao.api.Domain.Adapters;
+using System;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace luafalcao.api.Web.Extensions
 {
@@ -86,6 +90,31 @@ namespace luafalcao.api.Web.Extensions
 
             builder.AddEntityFrameworkStores<RepositoryContext>();
             builder.AddDefaultTokenProviders();
+        }
+
+        public static void ConfigureJwt(this IServiceCollection services, IConfiguration configuration)
+        {
+            var jwtSettings = configuration.GetSection("JwtSettings");
+            var secretKey = Environment.GetEnvironmentVariable("SECRET");
+
+            services.AddAuthentication(option =>
+            {
+                option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = jwtSettings.GetSection("ValidIssuer").Value,
+                        ValidAudience = jwtSettings.GetSection("ValidAudience").Value,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
+                    };
+                });
         }
     }
 }

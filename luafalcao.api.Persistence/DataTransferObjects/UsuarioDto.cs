@@ -10,6 +10,6 @@ namespace luafalcao.api.Persistence.DataTransferObjects
         public string Email { get; set; }
         public string Senha { get; set; }
 
-        public ICollection<string> Roles { get; set; }
+        public ICollection<string> Perfis { get; set; }
     }
 }

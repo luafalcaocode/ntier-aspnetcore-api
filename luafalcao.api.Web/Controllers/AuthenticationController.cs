@@ -1,5 +1,6 @@
 using luafalcao.api.Facade.Contracts;
 using luafalcao.api.Persistence.DataTransferObjects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -17,6 +18,7 @@ namespace luafalcao.api.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Route("usuario/registro")]
         public async Task<IActionResult> RegisterUser(UsuarioDto usuarioDto)
         {
