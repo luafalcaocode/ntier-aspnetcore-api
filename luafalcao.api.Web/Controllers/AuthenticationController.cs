@@ -19,7 +19,6 @@ namespace luafalcao.api.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize]
         [Route("usuario/registro")]
         public async Task<IActionResult> RegisterUser([FromBody] UsuarioCadastroDto usuarioDto)
         {

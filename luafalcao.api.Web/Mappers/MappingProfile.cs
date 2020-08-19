@@ -10,6 +10,9 @@ namespace luafalcao.api.Web.Mappers
     {
         public MappingProfile()
         {
+            CreateMap<ArtigoDto, Artigo>();
+            CreateMap<Artigo, ArtigoDto>();
+
             #region Usuário
             CreateMap<UsuarioCadastroDto, Usuario>()
                 .ForMember(usuarioEntity => usuarioEntity.UserName, option => option.MapFrom(usuarioDto => usuarioDto.Email));
@@ -18,7 +21,6 @@ namespace luafalcao.api.Web.Mappers
 
             CreateMap<UsuarioAutenticacaoDto, Usuario>()
                 .ForMember(usuarioEntity => usuarioEntity.UserName, option => option.MapFrom(usuarioDto => usuarioDto.Email));
-             //   .ForMember(usuarioEntity => usuarioEntity.Password, option => option.MapFrom(usuarioDto => usuarioDto.Senha));
 
             #endregion
 

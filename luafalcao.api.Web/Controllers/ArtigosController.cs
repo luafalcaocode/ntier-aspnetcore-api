@@ -1,5 +1,5 @@
 ﻿using luafalcao.api.Facade.Contracts;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,6 +18,7 @@ namespace luafalcao.api.Web.Controllers
         public ArtigosController(IBlogFacade facade) => _facade = facade;
 
         [HttpGet]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> GetArtigos()
         {
             var artigos = await _facade.ObterTodosOsArtigos();
