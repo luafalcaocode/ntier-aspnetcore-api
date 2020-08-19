@@ -61,7 +61,7 @@ namespace luafalcao.api.Web.Extensions
 
         public static void ConfigureAdapters(this IServiceCollection services)
         {
-            services.AddScoped<IUserManagerAdapter, UserManagerAdapter>();
+            services.AddScoped<IAuthenticationManager, AuthenticationManager>();
         }
 
         public static void ConfigureDomains(this IServiceCollection services)

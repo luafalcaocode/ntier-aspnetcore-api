@@ -4,8 +4,12 @@ using luafalcao.api.Shared.Utils;
 
 namespace luafalcao.api.Domain.Contracts.Adapters
 {
-    public interface IUserManagerAdapter
+    public interface IAuthenticationManager
     {
         Task<Message<Usuario>> RegisterUser(Usuario usuario);
+        Task<bool> ValidateUser(Usuario usuario);
+
+        Task<string> CreateToken();
+        
     }
 }

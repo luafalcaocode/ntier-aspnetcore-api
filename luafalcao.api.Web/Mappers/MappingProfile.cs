@@ -1,8 +1,7 @@
-﻿using luafalcao.api.Persistence.Entities;
+﻿using AutoMapper;
 using luafalcao.api.Persistence.DataTransferObjects;
-
-using AutoMapper;
-using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
+using luafalcao.api.Persistence.DataTransferObjects.Usuario;
+using luafalcao.api.Persistence.Entities;
 using luafalcao.api.Shared.Utils;
 
 namespace luafalcao.api.Web.Mappers
@@ -11,10 +10,17 @@ namespace luafalcao.api.Web.Mappers
     {
         public MappingProfile()
         {
-            CreateMap<UsuarioDto, Usuario>()
+            #region Usuário
+            CreateMap<UsuarioCadastroDto, Usuario>()
                 .ForMember(usuarioEntity => usuarioEntity.UserName, option => option.MapFrom(usuarioDto => usuarioDto.Email));
-            CreateMap<Usuario, UsuarioDto>()
+            CreateMap<Usuario, UsuarioCadastroDto>()
                 .ForMember(usuarioDto => usuarioDto.Email, option => option.MapFrom(usuarioEntity => usuarioEntity.Email));
+
+            CreateMap<UsuarioAutenticacaoDto, Usuario>()
+                .ForMember(usuarioEntity => usuarioEntity.UserName, option => option.MapFrom(usuarioDto => usuarioDto.Email));
+             //   .ForMember(usuarioEntity => usuarioEntity.Password, option => option.MapFrom(usuarioDto => usuarioDto.Senha));
+
+            #endregion
 
 
             CreateMap(typeof(Message<>), typeof(Message<>));
