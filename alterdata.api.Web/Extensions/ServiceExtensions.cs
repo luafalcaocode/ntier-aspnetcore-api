@@ -18,6 +18,7 @@ using System;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.OpenApi.Models;
 
 namespace alterdata.api.Web.Extensions
 {
@@ -112,6 +113,14 @@ namespace alterdata.api.Web.Extensions
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
                     };
                 });
+        }
+
+        public static void ConfigureSwagger(this IServiceCollection services)
+        {
+            services.AddSwaggerGen(s =>
+            {
+                s.SwaggerDoc("v1", new OpenApiInfo { Title = "ALTERDATA SOFTWARE API", Version = "v1" });
+            });
         }
     }
 }

@@ -34,6 +34,7 @@ namespace alterdata.api.Web
             services.AddAuthentication();
             services.ConfigureIdentity();
             services.ConfigureJwt(Configuration);
+            services.ConfigureSwagger();
 
             services.AddControllers()
                 .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
@@ -58,6 +59,12 @@ namespace alterdata.api.Web
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(s =>
+            {
+                s.SwaggerEndpoint("/swagger/v1/swagger.json", "ALTERDATA SOFTWARE");
+            });
 
             app.UseEndpoints(endpoints =>
             {
