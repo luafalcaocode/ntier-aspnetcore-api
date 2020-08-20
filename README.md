@@ -33,6 +33,10 @@ Em caso de problemas para executar o projeto, tente as seguintes opções:
 
 + Se o projeto de testes não sinalizar o status dos testes executados, rode o comando **dotnet test** no console do Visual Studio para rodar o projeto do NUnit manualmente.
 
+## Convenção de Nomeclaturas
+
+As regras e entidades de negócio estão escritas em português para facilitar a identificação. As demais partes do código foram mantidades em inglês. Padrões de projeto, quando necessário, foram utilizados com sufixos para facilitar a identificação e permitir um vocabulário comum entre os desenvolvedores no projeto.
+
 
 ## Tecnologias utilizadas
 
