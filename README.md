@@ -23,7 +23,9 @@ Esta branch hospeda o projeto de uma Web API construída para o processo seletiv
 
 ## Solução de problemas
 
-+ Se ao rodar o projeto você visualizar uma mensagem de erro, verifique se o seu Antivírus. O Avast, por exemplo, faz uma varredura ao iniciar a aplicação e só após sua conclusão é possível iniciar o projeto. 
+Em caso de problemas para executar o projeto, tente as seguintes opções:
+
++ Se ao rodar o projeto você visualizar uma mensagem de erro, verifique se o seu Antivírus está bloqueando a execução do projeto. O Avast, por exemplo, faz uma varredura ao iniciar a aplicação e só após sua conclusão é possível iniciar o projeto. 
 
 + Se os projetos não forem carregados na solução, abra o Visual Studio e rode-o novamente com permissão de Administrador
 
