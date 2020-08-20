@@ -1,6 +1,6 @@
-# ALTERDATA ASP .NET Core API
+# ALTERDATA SOFTWARE ASP .NET Core API
 
-Esta repositório hospeda o projeto de uma Web API construída para o processo seletivo da Altedata para o Sistema de Votação de Recursos (SVR) desenvolvida com o framework ASP .NET Core. O projeto usa uma arquitetura multicamada fazendo a separação dos conceitos, utiliza alguns padrões de projeto para tornar o código mais reutilizável e fácil de manter e faz o uso de algumas tecnologias como o EF Core e Microsoft Identity para cuidar da infraestrutura e tornar o desenvolvimento mais produtivo.
+Esta repositório hospeda o projeto de uma Web API construída para o processo seletivo da Altedata Sofware para o Sistema de Votação de Recursos (SVR) desenvolvida com o framework ASP .NET Core. Neste projeto fiz o uso de uma arquitetura multicamada (N-tier) fazendo a separação dos conceitos, adotei alguns padrões de projeto para tornar o código mais reutilizável e fácil de manter e fiz o uso de algumas tecnologias como o Entity Framwork Core e o Microsoft Identity para cuidar da infraestrutura de segurança e acesso a dados da aplicação, tornando o desenvolvimento mais produtivo e focado na implementação do negócio.
 
 ## Pré-requisitos:
 
@@ -29,9 +29,13 @@ Em caso de problemas para executar o projeto, tente as seguintes opções:
 
 + Se os projetos não forem carregados na solução, abra o Visual Studio e rode-o novamente com permissão de Administrador.
 
-+ Se a autenticação apresentar problemas, verifique se uma variável de ambiente de sistema com o nome **SECRET** está configurada no seu sistema operacional.
++ Se a autenticação apresentar problemas, verifique se uma variável de ambiente de sistema com o nome **SECRET** está configurada no seu sistema operacional. Isto é necessário para garantir a segurança da API.
 
 + Se o projeto de testes não sinalizar o status dos testes executados, rode o comando **dotnet test** no console do Visual Studio para rodar o projeto do NUnit manualmente.
+
+## Convenção de nomeclaturas
+
+As regras e entidades de negócio estão escritas em português para facilitar a identificação. As demais partes do código foram mantidadas em inglês. Padrões de projeto, quando necessário, foram utilizados com sufixos para facilitar a identificação e permitir um vocabulário comum entre os desenvolvedores no projeto.
 
 
 ## Tecnologias utilizadas
@@ -41,3 +45,5 @@ Em caso de problemas para executar o projeto, tente as seguintes opções:
 -  Entity Framework Core
 -  PostgreSQL 2.1.4
 - NUnit Test Runner
+
+
