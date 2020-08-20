@@ -35,7 +35,7 @@ Em caso de problemas para executar o projeto, tente as seguintes opções:
 
 ## Convenção de Nomeclaturas
 
-As regras e entidades de negócio estão escritas em português para facilitar a identificação. As demais partes do código foram mantidades em inglês. Padrões de projeto, quando necessário, foram utilizados com sufixos para facilitar a identificação e permitir um vocabulário comum entre os desenvolvedores no projeto.
+As regras e entidades de negócio estão escritas em português para facilitar a identificação. As demais partes do código foram mantidadas em inglês. Padrões de projeto, quando necessário, foram utilizados com sufixos para facilitar a identificação e permitir um vocabulário comum entre os desenvolvedores no projeto.
 
 
 ## Tecnologias utilizadas
