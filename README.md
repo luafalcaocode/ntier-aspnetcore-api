@@ -1,4 +1,4 @@
-# alterdata-voting-rest-api
+# ALTERDATA SVR API
 
 Esta branch hospeda o projeto de uma Web API construída para o processo seletivo da Altedata para o Sistema de Votação de Recursos (SVR) desenvolvida com o framework ASP .NET Core. 
 
