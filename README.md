@@ -29,7 +29,7 @@ Em caso de problemas para executar o projeto, tente as seguintes opções:
 
 + Se os projetos não forem carregados na solução, abra o Visual Studio e rode-o novamente com permissão de Administrador.
 
-+ Se a autenticação apresentar problemas, verifique se uma variável de ambiente de sistema com o nome **SECRET** está configurada no seu sistema operacional.
++ Se a autenticação apresentar problemas, verifique se uma variável de ambiente de sistema com o nome **SECRET** está configurada no seu sistema operacional. Isto é necessário para garantir a segurança da API.
 
 + Se o projeto de testes não sinalizar o status dos testes executados, rode o comando **dotnet test** no console do Visual Studio para rodar o projeto do NUnit manualmente.
 
