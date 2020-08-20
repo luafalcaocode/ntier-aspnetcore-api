@@ -8,20 +8,20 @@ https://localhost:44332/swagger/index.html
 
 ## Pré-requisitos:
 
-+ instalar o .NET Core SDK 3.1.5
-+ instalar o PostgreSQL 2.1.4
-+ instalar o Visual Studio 2019 ou o Visual Studio Code
-+ ter acesso de administrador na máquina
-+ configurar uma variável de ambiente no sistema operacional como administrador com o nome **SECRET** e um valor  (isto será usado para autenticação JWT durante login e acesso aos endpoints protegidos)
++ Instalar o .NET Core SDK 3.1.5
++ Instalar o PostgreSQL 2.1.4
++ Instalar o Visual Studio 2019 ou o Visual Studio Code
++ Rer acesso de administrador na máquina
++ Configurar uma variável de ambiente no sistema operacional como administrador com o nome **SECRET** e um valor  (isto será usado para autenticação JWT durante login e acesso aos endpoints protegidos)
 
 ## Configurando o projeto:
 
-1. clonar o repositório no GIT
-2. abrir o projeto no visual studio
-3. alterar a string de conexão do arquivo **appSettings.json** para apontar para as configurações da sua máquina com um servidor PostgreSQL configurado (configurar a chave **PostgreSQLConnection** do arquivo);
-4. abrir o console do Visual Studio (navegue até Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes) ou o interpretador de comandos do sistema apontando para o projeto principal (altedata.api.Web) e digite o seguinte comando para gerar a estrutura do banco de dados: **update-database**
+1. Clonar o repositório no GIT
+2. Abrir o projeto no visual studio
+3. Alterar a string de conexão do arquivo **appSettings.json** para apontar para as configurações da sua máquina com um servidor PostgreSQL configurado (configurar a chave **PostgreSQLConnection** do arquivo);
+4. Abrir o console do Visual Studio (navegue até Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes) ou o interpretador de comandos do sistema apontando para o projeto principal (altedata.api.Web) e digite o seguinte comando para gerar a estrutura do banco de dados: **update-database**
 
-**Obs.:** se o comando update-database não for reconhecido então será necessário configurar o recurso **migrations** digitando o seguinte comando no console apontando para o projeto principal: **dotnet tool install --global dotnet-ef**
+**Obs.:** Se o comando update-database não for reconhecido então será necessário configurar o recurso **migrations** digitando o seguinte comando no console apontando para o projeto principal: **dotnet tool install --global dotnet-ef**
 
 5. Pressione F5 
 
@@ -48,6 +48,6 @@ As regras e entidades de negócio estão escritas em português para facilitar a
 -  Microsoft Identity Membership
 -  Entity Framework Core
 -  PostgreSQL 2.1.4
-- NUnit Test Runner
+-  NUnit Test Runner
 
 
