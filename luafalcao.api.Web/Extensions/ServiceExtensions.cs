@@ -37,7 +37,7 @@ namespace luafalcao.api.Web.Extensions
 
         public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) =>
             services.AddEntityFrameworkNpgsql().AddDbContext<RepositoryContext>(opts => opts.UseNpgsql(configuration.GetConnectionString("PostgreSQLConnection"),
-               b => b.MigrationsAssembly("luafalcao.api.Web")));
+               b => b.MigrationsAssembly("Alterdata.api.Web")));
 
         public static void ConfigureIISIntegration(this IServiceCollection services) =>
             services.Configure<IISOptions>(options =>

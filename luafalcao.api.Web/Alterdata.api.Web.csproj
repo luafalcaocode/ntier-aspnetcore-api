@@ -13,8 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\luafalcao.api.Domain\luafalcao.api.Domain.csproj" />
-    <ProjectReference Include="..\luafalcao.api.Facade\luafalcao.api.Facade.csproj" />
+    <Compile Remove="Migrations\20200820165443_CreationOfBusinessEntities.cs" />
+    <Compile Remove="Migrations\20200820165443_CreationOfBusinessEntities.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\luafalcao.api.Domain\Alterdata.api.Domain.csproj" />
+    <ProjectReference Include="..\luafalcao.api.Facade\Alterdata.api.Facade.csproj" />
   </ItemGroup>
 
   <ItemGroup>

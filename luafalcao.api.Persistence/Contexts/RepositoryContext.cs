@@ -1,4 +1,5 @@
 ﻿using luafalcao.api.Persistence.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,5 +24,9 @@ namespace luafalcao.api.Persistence.Contexts
 
         public DbSet<Artigo> Artigos { get; set; }
         public DbSet<Comentario> Comentarios { get; set; }
+
+        public DbSet<Recurso> Recursos { get; set; }
+        public DbSet<Votacao> Votacao { get; set; }
+        public DbSet<Funcionario> Funcionario { get; set; }
     }
 }

@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\luafalcao.api.Persistence\luafalcao.api.Persistence.csproj" />
-    <ProjectReference Include="..\luafalcao.api.Shared\luafalcao.api.Shared.csproj" />
+    <ProjectReference Include="..\luafalcao.api.Persistence\Alterdata.api.Persistence.csproj" />
+    <ProjectReference Include="..\luafalcao.api.Shared\Alterdata.api.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\luafalcao.api.Domain\luafalcao.api.Domain.csproj" />
-    <ProjectReference Include="..\luafalcao.api.Shared\luafalcao.api.Shared.csproj" />
+    <ProjectReference Include="..\luafalcao.api.Domain\Alterdata.api.Domain.csproj" />
+    <ProjectReference Include="..\luafalcao.api.Shared\Alterdata.api.Shared.csproj" />
   </ItemGroup>
 
 </Project>
