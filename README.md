@@ -27,11 +27,11 @@ Em caso de problemas para executar o projeto, tente as seguintes opções:
 
 + Se ao rodar o projeto você visualizar uma mensagem de erro, verifique se o seu Antivírus está bloqueando a execução do projeto. O Avast, por exemplo, faz uma varredura ao iniciar a aplicação e só após sua conclusão é possível iniciar o projeto. 
 
-+ Se os projetos não forem carregados na solução, abra o Visual Studio e rode-o novamente com permissão de Administrador
++ Se os projetos não forem carregados na solução, abra o Visual Studio e rode-o novamente com permissão de Administrador.
 
-+ Se a autenticação apresentar problemas, verifique se uma variável de ambiente de sistema com o nome SECRET está configurada no seu sistema operacional]
++ Se a autenticação apresentar problemas, verifique se uma variável de ambiente de sistema com o nome **SECRET** está configurada no seu sistema operacional.
 
-+ Se o projeto de testes não sinalizar o status dos testes executados, rode o comando dotnet test no console do Visual Studio para rodar o projeto do NUnit manualmente
++ Se o projeto de testes não sinalizar o status dos testes executados, rode o comando **dotnet test** no console do Visual Studio para rodar o projeto do NUnit manualmente.
 
 
 ## Tecnologias utilizadas
