@@ -11,7 +11,7 @@ https://localhost:44332/swagger/index.html
 + Instalar o .NET Core SDK 3.1.5
 + Instalar o PostgreSQL 2.1.4
 + Instalar o Visual Studio 2019 ou o Visual Studio Code
-+ Rer acesso de administrador na máquina
++ Ter acesso de administrador na máquina
 + Configurar uma variável de ambiente no sistema operacional como administrador com o nome **SECRET** e um valor  (isto será usado para autenticação JWT durante login e acesso aos endpoints protegidos)
 
 ## Configurando o projeto:
