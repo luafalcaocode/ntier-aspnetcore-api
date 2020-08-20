@@ -10,8 +10,12 @@ namespace luafalcao.api.Persistence.Factories
         {
             switch(repositoryType)
             {
-                case RepositoryTypeEnum.Artigo:
-                    return new ArtigoRepository(context);
+                case RepositoryTypeEnum.Funcionario:
+                    return null;
+                case RepositoryTypeEnum.Recurso:
+                    return null;
+                case RepositoryTypeEnum.Votacao:
+                    return null;
             }
 
             return null;

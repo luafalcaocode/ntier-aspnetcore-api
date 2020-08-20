@@ -10,16 +10,16 @@ namespace luafalcao.api.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Votacao> builder)
         {
-            builder.HasData(
-                new Votacao
-                {
-                    VotacaoId = 1,
-                    DataHora = DateTime.Now,
-                    Comentario = "Este recurso é importante para o cliente",
-                    RecursoId = 1,
-                    FuncionarioId = 1
-                }
-            );
+            //builder.HasData(
+            //    new Votacao
+            //    {
+            //        VotacaoId = 1,
+            //        DataHora = DateTime.Now,
+            //        Comentario = "Este recurso é importante para o cliente",
+            //        RecursoId = 1,
+            //        FuncionarioId = 1
+            //    }
+            //);
         }
 
     }

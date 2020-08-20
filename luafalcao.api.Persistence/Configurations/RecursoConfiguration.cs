@@ -9,30 +9,30 @@ namespace luafalcao.api.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Recurso> builder)
         {
-            builder.HasMany<Votacao>()
-                .WithOne(votacao => votacao.Recurso)
-                .HasForeignKey(s => s.RecursoId);
+            //builder.HasMany<Votacao>()
+            //    .WithOne(votacao => votacao.Recurso)
+            //    .HasForeignKey(s => s.RecursoId);
 
-            builder.HasData(
-                new Recurso
-                {
-                    RecursoId = 1,
-                    Nome = "Push Notifications",
-                    NumeroDeVotos = 1,
-                },
-                new Recurso
-                {
-                    RecursoId = 2,
-                    Nome = "Pagamento usando cartão de crédito e boleto bancário",
-                    NumeroDeVotos = 0,
-                },
-                new Recurso
-                {
-                    RecursoId = 3,
-                    Nome = "Leitura de código de barras para realizar compras",
-                    NumeroDeVotos = 0,
-                }
-            );
+            //builder.HasData(
+            //    new Recurso
+            //    {
+            //        RecursoId = 1,
+            //        Nome = "Push Notifications",
+            //        NumeroDeVotos = 1,
+            //    },
+            //    new Recurso
+            //    {
+            //        RecursoId = 2,
+            //        Nome = "Pagamento usando cartão de crédito e boleto bancário",
+            //        NumeroDeVotos = 0,
+            //    },
+            //    new Recurso
+            //    {
+            //        RecursoId = 3,
+            //        Nome = "Leitura de código de barras para realizar compras",
+            //        NumeroDeVotos = 0,
+            //    }
+            //);
         }
     }
 }

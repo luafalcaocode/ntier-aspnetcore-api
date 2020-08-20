@@ -14,4 +14,8 @@
     <ProjectReference Include="..\luafalcao.api.Shared\Alterdata.api.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

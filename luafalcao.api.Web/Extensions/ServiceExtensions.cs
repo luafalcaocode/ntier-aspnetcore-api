@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using luafalcao.api.Domain.Contracts;
-using luafalcao.api.Domain.Services;
 using luafalcao.api.Facade.Contracts;
 using luafalcao.api.Facade;
 using luafalcao.api.Persistence.Contracts.Repositories;
@@ -55,7 +54,6 @@ namespace luafalcao.api.Web.Extensions
 
         public static void ConfigureFacades(this IServiceCollection services)
         {
-            services.AddScoped<IBlogFacade, BlogFacade>();
             services.AddScoped<IAuthenticationFacade, AuthenticationFacade>();
         }
 
@@ -66,7 +64,6 @@ namespace luafalcao.api.Web.Extensions
 
         public static void ConfigureDomains(this IServiceCollection services)
         {
-            services.AddScoped<IArtigoService, ArtigoService>();
         }
 
         public static void ConfigureRepositoryManager(this IServiceCollection services)

@@ -9,13 +9,13 @@ namespace luafalcao.api.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Funcionario> builder)
         {
-            builder.HasData(new Funcionario
-            {
-                Nome = "Luã Falcão",
-                Email = "superadmin@email.com",
-                FuncionarioId = 1,
-                UsuarioId = "9e203a7a-55ac-4186-9a2b-2e0961235316"
-            });
+            //builder.HasData(new Funcionario
+            //{
+            //    Nome = "Luã Falcão",
+            //    Email = "superadmin@email.com",
+            //    FuncionarioId = 1,
+            //    UsuarioId = "9e203a7a-55ac-4186-9a2b-2e0961235316"
+            //});
         }
     }
 }

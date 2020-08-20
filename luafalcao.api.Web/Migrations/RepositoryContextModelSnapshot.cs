@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using luafalcao.api.Persistence.Contexts;
 
-namespace luafalcao.api.Web.Migrations
+namespace Alterdata.api.Web.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
     partial class RepositoryContextModelSnapshot : ModelSnapshot
@@ -22,40 +22,45 @@ namespace luafalcao.api.Web.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
+                        .HasColumnName("id")
                         .HasColumnType("text");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnName("concurrency_stamp")
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
+                        .HasColumnName("name")
                         .HasColumnType("character varying(256)")
                         .HasMaxLength(256);
 
                     b.Property<string>("NormalizedName")
+                        .HasColumnName("normalized_name")
                         .HasColumnType("character varying(256)")
                         .HasMaxLength(256);
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_asp_net_roles");
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
                         .HasName("RoleNameIndex");
 
-                    b.ToTable("AspNetRoles");
+                    b.ToTable("asp_net_roles");
 
                     b.HasData(
                         new
                         {
-                            Id = "48cd903a-4de1-4e6b-be80-18e4ee068dc9",
-                            ConcurrencyStamp = "4ce8e062-8276-4460-8b0a-99de3fe8b448",
+                            Id = "b3975b88-826b-4373-a707-f0f8c644e8d6",
+                            ConcurrencyStamp = "34fbc6c3-f877-44b5-845a-dd62bdacb17c",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "c05ff7ba-d902-4408-8343-238749c14e4b",
-                            ConcurrencyStamp = "5f852c4a-f5d4-4958-91af-9d248b3a8967",
+                            Id = "9f7d9a1a-b625-4e57-b7ee-eef2ca813037",
+                            ConcurrencyStamp = "f0373e94-9f04-4684-b9b4-dafd82df56b9",
                             Name = "Comum",
                             NormalizedName = "Comum"
                         });
@@ -65,340 +70,252 @@ namespace luafalcao.api.Web.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("ClaimType")
+                        .HasColumnName("claim_type")
                         .HasColumnType("text");
 
                     b.Property<string>("ClaimValue")
+                        .HasColumnName("claim_value")
                         .HasColumnType("text");
 
                     b.Property<string>("RoleId")
                         .IsRequired()
+                        .HasColumnName("role_id")
                         .HasColumnType("text");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_asp_net_role_claims");
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetRoleClaims");
+                    b.ToTable("asp_net_role_claims");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("ClaimType")
+                        .HasColumnName("claim_type")
                         .HasColumnType("text");
 
                     b.Property<string>("ClaimValue")
+                        .HasColumnName("claim_value")
                         .HasColumnType("text");
 
                     b.Property<string>("UserId")
                         .IsRequired()
+                        .HasColumnName("user_id")
                         .HasColumnType("text");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_asp_net_user_claims");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserClaims");
+                    b.ToTable("asp_net_user_claims");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
+                        .HasColumnName("login_provider")
                         .HasColumnType("text");
 
                     b.Property<string>("ProviderKey")
+                        .HasColumnName("provider_key")
                         .HasColumnType("text");
 
                     b.Property<string>("ProviderDisplayName")
+                        .HasColumnName("provider_display_name")
                         .HasColumnType("text");
 
                     b.Property<string>("UserId")
                         .IsRequired()
+                        .HasColumnName("user_id")
                         .HasColumnType("text");
 
-                    b.HasKey("LoginProvider", "ProviderKey");
+                    b.HasKey("LoginProvider", "ProviderKey")
+                        .HasName("pk_asp_net_user_logins");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserLogins");
+                    b.ToTable("asp_net_user_logins");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
                     b.Property<string>("UserId")
+                        .HasColumnName("user_id")
                         .HasColumnType("text");
 
                     b.Property<string>("RoleId")
+                        .HasColumnName("role_id")
                         .HasColumnType("text");
 
-                    b.HasKey("UserId", "RoleId");
+                    b.HasKey("UserId", "RoleId")
+                        .HasName("pk_asp_net_user_roles");
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetUserRoles");
+                    b.ToTable("asp_net_user_roles");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
+                        .HasColumnName("user_id")
                         .HasColumnType("text");
 
                     b.Property<string>("LoginProvider")
+                        .HasColumnName("login_provider")
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
+                        .HasColumnName("name")
                         .HasColumnType("text");
 
                     b.Property<string>("Value")
+                        .HasColumnName("value")
                         .HasColumnType("text");
 
-                    b.HasKey("UserId", "LoginProvider", "Name");
+                    b.HasKey("UserId", "LoginProvider", "Name")
+                        .HasName("pk_asp_net_user_tokens");
 
-                    b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("luafalcao.api.Persistence.Entities.Artigo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<DateTime>("DataPublicacao")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Link")
-                        .HasColumnType("text");
-
-                    b.Property<int>("NumeroLikes")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Tags")
-                        .HasColumnType("text");
-
-                    b.Property<byte[]>("Thumbnail")
-                        .HasColumnType("bytea");
-
-                    b.Property<string>("Titulo")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Artigo");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DataPublicacao = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Descricao = "Chegou a vez do padrão de projetos Adapter! Vamos ver como usá-lo para tornar o nosso código mais flexível",
-                            NumeroLikes = 5,
-                            Tags = "DIARIO-ENGENHEIRO-SOFTWARE",
-                            Titulo = "Design Patterns #5: Adapter"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            DataPublicacao = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Descricao = "Padrões de projeto são soluções flexíveis e reutilizáveis para problemas frequentes no dia a dia do programador...",
-                            NumeroLikes = 10,
-                            Tags = "DIARIO-ENGENHEIRO-SOFTWARE",
-                            Titulo = "Padrões de Projeto e onde habitam"
-                        });
-                });
-
-            modelBuilder.Entity("luafalcao.api.Persistence.Entities.Comentario", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<int>("ArtigoId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Autor")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("DataPublicacao")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ArtigoId");
-
-                    b.ToTable("Comentario");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ArtigoId = 1,
-                            Autor = "Jaina Proudmore",
-                            DataPublicacao = new DateTime(1, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Descricao = "Adorei o Artigo! Parabéns!"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ArtigoId = 1,
-                            Autor = "Iena Hard",
-                            DataPublicacao = new DateTime(1, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Descricao = "Não concordo com o que você escreveu sobre o Adapter! Ele é mais complexo do que isso! Mas boa tentativa!!"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ArtigoId = 2,
-                            Autor = "Tron",
-                            DataPublicacao = new DateTime(1, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Descricao = "Padrões de projeto são muito importantes!! Espero que no futuro mais programadores façam uso deles para criar soluções de valor!"
-                        });
+                    b.ToTable("asp_net_user_tokens");
                 });
 
             modelBuilder.Entity("luafalcao.api.Persistence.Entities.Funcionario", b =>
                 {
                     b.Property<int>("FuncionarioId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("funcionario_id")
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Email")
+                        .HasColumnName("email")
                         .HasColumnType("text");
 
                     b.Property<string>("Nome")
+                        .HasColumnName("nome")
                         .HasColumnType("text");
 
                     b.Property<string>("UsuarioId")
+                        .HasColumnName("usuario_id")
                         .HasColumnType("text");
 
-                    b.HasKey("FuncionarioId");
+                    b.HasKey("FuncionarioId")
+                        .HasName("pk_funcionario");
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable("Funcionario");
-
-                    b.HasData(
-                        new
-                        {
-                            FuncionarioId = 1,
-                            Email = "superadmin@email.com",
-                            Nome = "Luã Falcão",
-                            UsuarioId = "9e203a7a-55ac-4186-9a2b-2e0961235316"
-                        });
+                    b.ToTable("funcionario");
                 });
 
             modelBuilder.Entity("luafalcao.api.Persistence.Entities.Recurso", b =>
                 {
                     b.Property<int>("RecursoId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("recurso_id")
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Nome")
+                        .HasColumnName("nome")
                         .HasColumnType("text");
 
                     b.Property<int>("NumeroDeVotos")
+                        .HasColumnName("numero_de_votos")
                         .HasColumnType("integer");
 
-                    b.HasKey("RecursoId");
+                    b.HasKey("RecursoId")
+                        .HasName("pk_recursos");
 
-                    b.ToTable("Recursos");
-
-                    b.HasData(
-                        new
-                        {
-                            RecursoId = 1,
-                            Nome = "Push Notifications",
-                            NumeroDeVotos = 1
-                        },
-                        new
-                        {
-                            RecursoId = 2,
-                            Nome = "Pagamento usando cartão de crédito e boleto bancário",
-                            NumeroDeVotos = 0
-                        },
-                        new
-                        {
-                            RecursoId = 3,
-                            Nome = "Leitura de código de barras para realizar compras",
-                            NumeroDeVotos = 0
-                        });
+                    b.ToTable("recursos");
                 });
 
             modelBuilder.Entity("luafalcao.api.Persistence.Entities.Usuario", b =>
                 {
                     b.Property<string>("Id")
+                        .HasColumnName("id")
                         .HasColumnType("text");
 
                     b.Property<int>("AccessFailedCount")
+                        .HasColumnName("access_failed_count")
                         .HasColumnType("integer");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnName("concurrency_stamp")
                         .HasColumnType("text");
 
                     b.Property<string>("Email")
+                        .HasColumnName("email")
                         .HasColumnType("character varying(256)")
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed")
+                        .HasColumnName("email_confirmed")
                         .HasColumnType("boolean");
 
                     b.Property<bool>("LockoutEnabled")
+                        .HasColumnName("lockout_enabled")
                         .HasColumnType("boolean");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnName("lockout_end")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Nome")
+                        .HasColumnName("nome")
                         .HasColumnType("text");
 
                     b.Property<string>("NormalizedEmail")
+                        .HasColumnName("normalized_email")
                         .HasColumnType("character varying(256)")
                         .HasMaxLength(256);
 
                     b.Property<string>("NormalizedUserName")
+                        .HasColumnName("normalized_user_name")
                         .HasColumnType("character varying(256)")
                         .HasMaxLength(256);
 
                     b.Property<string>("PasswordHash")
+                        .HasColumnName("password_hash")
                         .HasColumnType("text");
 
                     b.Property<string>("PhoneNumber")
+                        .HasColumnName("phone_number")
                         .HasColumnType("text");
 
                     b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnName("phone_number_confirmed")
                         .HasColumnType("boolean");
 
                     b.Property<string>("SecurityStamp")
+                        .HasColumnName("security_stamp")
                         .HasColumnType("text");
 
                     b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnName("two_factor_enabled")
                         .HasColumnType("boolean");
 
                     b.Property<string>("UserName")
+                        .HasColumnName("user_name")
                         .HasColumnType("character varying(256)")
                         .HasMaxLength(256);
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_asp_net_users");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -407,51 +324,42 @@ namespace luafalcao.api.Web.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex");
 
-                    b.ToTable("AspNetUsers");
+                    b.ToTable("asp_net_users");
                 });
 
             modelBuilder.Entity("luafalcao.api.Persistence.Entities.Votacao", b =>
                 {
                     b.Property<int>("VotacaoId")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("votacao_id")
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Comentario")
+                        .HasColumnName("comentario")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("DataHora")
+                        .HasColumnName("data_hora")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("FuncionarioId")
+                        .HasColumnName("funcionario_id")
                         .HasColumnType("integer");
 
                     b.Property<int>("RecursoId")
+                        .HasColumnName("recurso_id")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("RecursoId1")
-                        .HasColumnType("integer");
-
-                    b.HasKey("VotacaoId");
+                    b.HasKey("VotacaoId")
+                        .HasName("pk_votacao");
 
                     b.HasIndex("FuncionarioId")
                         .IsUnique();
 
                     b.HasIndex("RecursoId");
 
-                    b.HasIndex("RecursoId1");
-
-                    b.ToTable("Votacao");
-
-                    b.HasData(
-                        new
-                        {
-                            VotacaoId = 1,
-                            Comentario = "Este recurso é importante para o cliente",
-                            DataHora = new DateTime(2020, 8, 20, 14, 7, 36, 918, DateTimeKind.Local).AddTicks(9042),
-                            FuncionarioId = 1,
-                            RecursoId = 1
-                        });
+                    b.ToTable("votacao");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -459,6 +367,7 @@ namespace luafalcao.api.Web.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
+                        .HasConstraintName("fk_asp_net_role_claims_asp_net_roles_role_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -468,6 +377,7 @@ namespace luafalcao.api.Web.Migrations
                     b.HasOne("luafalcao.api.Persistence.Entities.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .HasConstraintName("fk_asp_net_user_claims_asp_net_users_user_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -477,6 +387,7 @@ namespace luafalcao.api.Web.Migrations
                     b.HasOne("luafalcao.api.Persistence.Entities.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .HasConstraintName("fk_asp_net_user_logins_asp_net_users_user_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -486,12 +397,14 @@ namespace luafalcao.api.Web.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
+                        .HasConstraintName("fk_asp_net_user_roles_asp_net_roles_role_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("luafalcao.api.Persistence.Entities.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .HasConstraintName("fk_asp_net_user_roles_asp_net_users_user_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -501,15 +414,7 @@ namespace luafalcao.api.Web.Migrations
                     b.HasOne("luafalcao.api.Persistence.Entities.Usuario", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("luafalcao.api.Persistence.Entities.Comentario", b =>
-                {
-                    b.HasOne("luafalcao.api.Persistence.Entities.Artigo", "Artigo")
-                        .WithMany("Comentarios")
-                        .HasForeignKey("ArtigoId")
+                        .HasConstraintName("fk_asp_net_user_tokens_asp_net_users_user_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -518,7 +423,8 @@ namespace luafalcao.api.Web.Migrations
                 {
                     b.HasOne("luafalcao.api.Persistence.Entities.Usuario", "Usuario")
                         .WithMany()
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("UsuarioId")
+                        .HasConstraintName("fk_funcionario_asp_net_users_usuario_id");
                 });
 
             modelBuilder.Entity("luafalcao.api.Persistence.Entities.Votacao", b =>
@@ -526,18 +432,16 @@ namespace luafalcao.api.Web.Migrations
                     b.HasOne("luafalcao.api.Persistence.Entities.Funcionario", "Funcionario")
                         .WithOne("Votacao")
                         .HasForeignKey("luafalcao.api.Persistence.Entities.Votacao", "FuncionarioId")
+                        .HasConstraintName("fk_votacao_funcionario_funcionario_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("luafalcao.api.Persistence.Entities.Recurso", "Recurso")
-                        .WithMany()
+                        .WithMany("Votacoes")
                         .HasForeignKey("RecursoId")
+                        .HasConstraintName("fk_votacao_recursos_recurso_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("luafalcao.api.Persistence.Entities.Recurso", null)
-                        .WithMany("Votacoes")
-                        .HasForeignKey("RecursoId1");
                 });
 #pragma warning restore 612, 618
         }

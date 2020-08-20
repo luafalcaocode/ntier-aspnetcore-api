@@ -6,6 +6,8 @@ namespace luafalcao.api.Persistence.Enums
 {
     public enum RepositoryTypeEnum
     {
-        Artigo
+        Funcionario,
+        Recurso,
+        Votacao
     }
 }

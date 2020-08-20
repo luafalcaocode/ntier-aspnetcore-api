@@ -7,7 +7,6 @@ namespace luafalcao.api.Persistence.Contracts.Repositories
 {
     public interface IRepositoryManager
     {
-        IArtigoRepository Artigo { get; }
         Task SaveAsync();
     }
 }
