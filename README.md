@@ -1,6 +1,6 @@
 # ALTERDATA ASP .NET Core API
 
-Esta repositório hospeda o projeto de uma Web API construída para o processo seletivo da Altedata para o Sistema de Votação de Recursos (SVR) desenvolvida com o framework ASP .NET Core. O projeto usa uma arquitetura multicamada fazendo a separação dos conceitos, utiliza alguns padrões de projeto para tornar o código mais reutilizável e fácil de manter e faz o uso de algumas tecnologias como o EF Core e Microsoft Identity para cuidar da infraestrutura de segurança e acesso dados para tornar o desenvolvimento mais produtivo e focado na implementação do negócio.
+Esta repositório hospeda o projeto de uma Web API construída para o processo seletivo da Altedata para o Sistema de Votação de Recursos (SVR) desenvolvida com o framework ASP .NET Core. Neste projeto fiz o uso de uma arquitetura multicamada (N-tier) fazendo a separação dos conceitos, adotei alguns padrões de projeto para tornar o código mais reutilizável e fácil de manter e fiz o uso de algumas tecnologias como o Entity Framwork Core e o Microsoft Identity para cuidar da infraestrutura de segurança e acesso a dados da aplicação, tornando o desenvolvimento mais produtivo e focado na implementação do negócio.
 
 ## Pré-requisitos:
 
