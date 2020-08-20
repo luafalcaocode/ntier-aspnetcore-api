@@ -16,3 +16,15 @@
 /luafalcao.api.Web/bin
 /luafalcao.api.Web/obj
 /luafalcao.api.Persistence/obj
+/alterdata.api.Domain/bin/Debug/netcoreapp3.1
+/alterdata.api.Domain/obj
+/alterdata.api.Facade/bin/Debug/netcoreapp3.1
+/alterdata.api.Facade/obj
+/alterdata.api.IntegrationTests/bin/Debug/netcoreapp3.1
+/alterdata.api.IntegrationTests/obj
+/alterdata.api.Persistence/bin/Debug/netcoreapp3.1
+/alterdata.api.Persistence/obj
+/alterdata.api.Shared/bin/Debug/netcoreapp3.1
+/alterdata.api.Shared/obj
+/alterdata.api.Web/bin
+/alterdata.api.Web/obj
