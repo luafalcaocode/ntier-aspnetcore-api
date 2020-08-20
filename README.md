@@ -15,7 +15,7 @@ Esta branch hospeda o projeto de uma Web API construída para o processo seletiv
 1. clonar o repositório no GIT
 2. abrir o projeto no visual studio
 3. alterar a string de conexão do arquivo **appSettings.json** para apontar para as configurações da sua máquina com um servidor PostgreSQL configurado (configurar a chave **PostgreSQLConnection** do arquivo);
-4. abrir o console do Visual Studio (navegue até Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes) ou o interpretador de comandos do sistema apontando para o projeto principal (altedata.api.Web) e digite o seguinte comando para gerar a estrutura do banco de dados: **update-database*
+4. abrir o console do Visual Studio (navegue até Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes) ou o interpretador de comandos do sistema apontando para o projeto principal (altedata.api.Web) e digite o seguinte comando para gerar a estrutura do banco de dados: **update-database**
 
 **Obs.:** se o comando update-database não for reconhecido então será necessário configurar o recurso **migrations** digitando o seguinte comando no console apontando para o projeto principal: **dotnet tool install --global dotnet-ef**
 
