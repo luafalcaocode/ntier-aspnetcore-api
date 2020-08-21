@@ -8,16 +8,29 @@ namespace alterdata.api.Persistence.Repositories
 {
     public class RepositoryManager : IRepositoryManager
     {
-        private RepositoryContext _repositoryContext;
+        private RepositoryContext context;
+        private IRecursoRepository recurso;
 
+        public IRecursoRepository Recurso 
+        {
+            get 
+            {
+                if (this.recurso == null)
+                {
+                    this.recurso = RepositoryFactory.Create(RepositoryTypeEnum.Recurso, this.context);
+                }
+
+                return this.recurso;
+            }
+        }
         public RepositoryManager(RepositoryContext context)
         {
-            _repositoryContext = context;
+            this.context = context;
         }
 
         public async Task SaveAsync()
         {
-            await _repositoryContext.SaveChangesAsync();
+            await context.SaveChangesAsync();
         }
     }
 }

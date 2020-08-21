@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Formatters\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 
 </Project>

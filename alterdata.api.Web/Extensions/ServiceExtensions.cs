@@ -19,6 +19,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using alterdata.api.Domain.Contracts.Services;
+using alterdata.api.Domain.Services;
 
 namespace alterdata.api.Web.Extensions
 {
@@ -56,6 +58,7 @@ namespace alterdata.api.Web.Extensions
         public static void ConfigureFacades(this IServiceCollection services)
         {
             services.AddScoped<IAuthenticationFacade, AuthenticationFacade>();
+            services.AddScoped<IRecursoFacade, RecursoFacade>();
         }
 
         public static void ConfigureAdapters(this IServiceCollection services)
@@ -65,6 +68,7 @@ namespace alterdata.api.Web.Extensions
 
         public static void ConfigureDomains(this IServiceCollection services)
         {
+            services.AddScoped<IRecursoService, RecursoService>(); 
         }
 
         public static void ConfigureRepositoryManager(this IServiceCollection services)

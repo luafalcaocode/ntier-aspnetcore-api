@@ -3,6 +3,7 @@ using alterdata.api.Persistence.DataTransferObjects;
 using alterdata.api.Persistence.DataTransferObjects.Usuario;
 using alterdata.api.Persistence.Entities;
 using alterdata.api.Shared.Utils;
+using alterdata.api.Persistence.DataTransferObjects.Recurso;
 
 namespace alterdata.api.Web.Mappers
 {
@@ -21,6 +22,10 @@ namespace alterdata.api.Web.Mappers
 
             #endregion
 
+            #region Recurso
+            CreateMap<RecursoDto, Recurso>();
+            CreateMap<Recurso, RecursoDto>();
+            #endregion
 
             CreateMap(typeof(Message<>), typeof(Message<>));
         }
