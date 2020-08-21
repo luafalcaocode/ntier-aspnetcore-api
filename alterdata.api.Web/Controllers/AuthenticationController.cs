@@ -31,13 +31,8 @@ namespace alterdata.api.Web.Controllers
         public async Task<IActionResult> Login([FromBody] UsuarioAutenticacaoDto usuarioDto)
         {
             var message = await this.authenticationFacade.Login(usuarioDto);
-
-            if (!message.Success)
-            {
-                return Unauthorized(message);
-            }
-
-            return Ok(message);
+            return StatusCode(message.StatusCode, message);
+            
         }
     }
 }
