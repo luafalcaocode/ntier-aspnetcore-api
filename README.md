@@ -50,4 +50,10 @@ As regras e entidades de negócio estão escritas em português para facilitar a
 -  PostgreSQL 2.1.4
 -  NUnit Test Runner
 
+## Contato:
+
+Em caso de dúvidas para fazer a configuração do projeto no seu ambiente, entre em contato comigo pelos meios de contato:
+
+E-mail: lpjfalcao@gmail.com ou lcodeveloper@outlook.com
+Cel.: (21) 990238300
 
