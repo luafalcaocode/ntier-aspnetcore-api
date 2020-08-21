@@ -9,11 +9,11 @@ namespace alterdata.api.Web.Controllers
     [ApiController]
     [Route("api/v1/recurso")]
     [Authorize]
-    public class RecursoController : ControllerBase
+    public class RecursosController : ControllerBase
     {
         private IRecursoFacade facade;
 
-        public RecursoController(IRecursoFacade facade)
+        public RecursosController(IRecursoFacade facade)
         {
             this.facade = facade;
         }

@@ -36,15 +36,17 @@ namespace alterdata.api.Domain.Adapters
             {
                 foreach (var error in result.Errors)
                 {
-                    message.Errors.Add(error.Description);
+                    message.Validations.Add(error.Description);
                 }
+
+                message.BadRequest();
 
                 return message;
             }
 
 
             await this.userManager.AddToRolesAsync(usuario, usuario.Perfis);
-            message.Success = true;
+            message.Ok();
 
             return message;
         }

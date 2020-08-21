@@ -10,7 +10,7 @@ namespace alterdata.api.Shared.Utils
         public bool Success { get ; set; }
         public int StatusCode { get; set; }
 
-        public IList<string> Errors = new List<string>();
+        public IList<string> Validations = new List<string>();
         public Exception Exception { get; set; }
 
         public Message()
@@ -25,11 +25,23 @@ namespace alterdata.api.Shared.Utils
             StatusCode = (int) StatusCodeEnum.Ok;
         }
 
+        public void Ok()
+        {
+            Success = true;
+            StatusCode = (int)StatusCodeEnum.Ok;
+        }
+
         public void Error(Exception error)
         {
             Success = false;
             Exception = error;
             StatusCode = (int)StatusCodeEnum.InternalServerError;
+        }
+
+        public void BadRequest()
+        {
+            Success = false;
+            StatusCode = (int)StatusCodeEnum.BadRequest;
         }
 
         public void NotFound()
@@ -54,7 +66,7 @@ namespace alterdata.api.Shared.Utils
     public class Message 
     {
         public bool Success { get; set; }
-        public IList<string> Errors = new List<string>();
+        public IList<string> Validations = new List<string>();
         public int StatusCode { get; set; }
         public Exception Exception { get; set; }
 
@@ -69,6 +81,12 @@ namespace alterdata.api.Shared.Utils
             Success = false;
             Exception = error;
             StatusCode = (int)StatusCodeEnum.InternalServerError;
+        }
+
+        public void Error()
+        {
+            Success = false;
+            StatusCode = (int)StatusCodeEnum.BadRequest;
         }
 
         public void NotFound()

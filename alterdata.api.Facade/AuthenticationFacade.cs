@@ -8,6 +8,7 @@ using AutoMapper;
 
 using System.Threading.Tasks;
 using alterdata.api.Persistence.DataTransferObjects.Usuario;
+using System;
 
 namespace alterdata.api.Facade
 {
@@ -24,8 +25,20 @@ namespace alterdata.api.Facade
 
         public async Task<Message<UsuarioCadastroDto>> RegisterUser(UsuarioCadastroDto usuarioDto)
         {
-            var usuario = this.mapper.Map<Usuario>(usuarioDto);
-            return this.mapper.Map<Message<UsuarioCadastroDto>>(await this.authenticationManager.RegisterUser(usuario));
+            var message = new Message<UsuarioCadastroDto>();
+
+            try
+            {
+                var usuario = this.mapper.Map<Usuario>(usuarioDto);
+                return this.mapper.Map<Message<UsuarioCadastroDto>>(await this.authenticationManager.RegisterUser(usuario));
+            }
+            catch(Exception excecao)
+            {
+                message.Error(excecao);
+            }
+
+
+            return message;
         }
 
         public async Task<Message<string>> Login(UsuarioAutenticacaoDto usuarioDto)
@@ -35,7 +48,7 @@ namespace alterdata.api.Facade
 
             if (!await this.authenticationManager.ValidateUser(usuario))
             {
-                message.Errors.Add("Falha na autenticação: Usuário ou senha incorreta.");
+                message.Validations.Add("Falha na autenticação: Usuário ou senha incorreta.");
                 message.Unauthorized();
 
                 return message;
