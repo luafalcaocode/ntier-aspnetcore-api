@@ -35,14 +35,13 @@ namespace alterdata.api.Facade
 
             if (!await this.authenticationManager.ValidateUser(usuario))
             {
-                message.Errors.Add("Authentication failed. Wrong username or password.");
-                message.Success = false;
+                message.Errors.Add("Falha na autenticação: Usuário ou senha incorreta.");
+                message.Unauthorized();
 
                 return message;
             }
 
-            message.Data = await this.authenticationManager.CreateToken();
-            message.Success = true;
+            message.Ok(await this.authenticationManager.CreateToken());
 
             return message;
         }

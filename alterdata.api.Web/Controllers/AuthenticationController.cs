@@ -23,7 +23,7 @@ namespace alterdata.api.Web.Controllers
         public async Task<IActionResult> RegisterUser([FromBody] UsuarioCadastroDto usuarioDto)
         {
             var message = await this.authenticationFacade.RegisterUser(usuarioDto);
-            return Ok(message);
+            return StatusCode(message.StatusCode, message);
         }
 
         [HttpPost]

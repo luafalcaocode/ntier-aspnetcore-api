@@ -7,11 +7,16 @@ namespace alterdata.api.Shared.Utils
     public class Message<T>
     {
         public T Data { get; set; }
-        public bool Success { get; set; }
+        public bool Success { get ; set; }
         public int StatusCode { get; set; }
 
         public IList<string> Errors = new List<string>();
         public Exception Exception { get; set; }
+
+        public Message()
+        {
+            StatusCode = (int) StatusCodeEnum.Ok;
+        }
 
         public void Ok(T data)
         {
@@ -37,6 +42,12 @@ namespace alterdata.api.Shared.Utils
         {
             Success = true;
             StatusCode = (int)StatusCodeEnum.NoContent;
+        }
+
+        public void Unauthorized()
+        {
+            Success = false;
+            StatusCode = (int)StatusCodeEnum.Unauthorized;
         }
     }
 
