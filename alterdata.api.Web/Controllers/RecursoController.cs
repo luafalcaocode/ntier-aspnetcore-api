@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using alterdata.api.Facade.Contracts;
 using alterdata.api.Persistence.DataTransferObjects.Recurso;
-using alterdata.api.Shared.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
+using System.Threading.Tasks;
 
 namespace alterdata.api.Web.Controllers
 {
@@ -23,17 +19,41 @@ namespace alterdata.api.Web.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Comum")]
         public async Task<IActionResult> GetRecursos()
         {
             var message = await this.facade.ObterTodos();
             return StatusCode(message.StatusCode, message);
         }
 
-        private IActionResult GetResponse(dynamic message)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetRecursoPorId(int id)
         {
-           
-            return Ok();
+            var message = await this.facade.ObterPorId(id);
+            return StatusCode(message.StatusCode, message);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Administrador")]
+        public async Task<IActionResult> Post(RecursoDto recursoDto)
+        {
+            var message = await this.facade.Cadastrar(recursoDto);
+            return StatusCode(message.StatusCode, message);
+        }
+
+        [HttpPut]
+        [Authorize(Roles = "Administrador")]
+        public async Task<IActionResult> Update(RecursoDto recursoDto)
+        {
+            var message = await this.facade.Atualizar(recursoDto);
+            return StatusCode(message.StatusCode, message);
+        }
+
+        [HttpDelete]
+        [Authorize(Roles = "Administrador")]
+        public async Task<IActionResult> Delete(RecursoDto recursoDto)
+        {
+            var message = await this.facade.Remover(recursoDto);
+            return StatusCode(message.StatusCode, message);
         }
     }
 }

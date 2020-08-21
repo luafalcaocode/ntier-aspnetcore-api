@@ -25,17 +25,20 @@ namespace alterdata.api.Domain.Services
         {
             return await this.repositorio.Recurso.ObterPorId(id);
         }
-        public void Cadastrar(Recurso recurso)
+        public async Task Cadastrar(Recurso recurso)
         {
             this.repositorio.Recurso.Cadastrar(recurso);
+            await this.repositorio.SaveAsync();
         }
-        public void Atualizar(Recurso recurso)
+        public async Task Atualizar(Recurso recurso)
         {
             this.repositorio.Recurso.Atualizar(recurso);
+            await this.repositorio.SaveAsync();
         }
-        public void Remover(Recurso recurso)
+        public async Task Remover(Recurso recurso)
         {
             this.repositorio.Recurso.Remover(recurso);
+            await this.repositorio.SaveAsync();
         }
     }
 }

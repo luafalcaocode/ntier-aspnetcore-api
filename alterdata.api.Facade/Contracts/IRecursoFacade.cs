@@ -11,8 +11,8 @@ namespace alterdata.api.Facade.Contracts
     {
         Task<Message<IEnumerable<RecursoDto>>> ObterTodos();
         Task<Message<RecursoDto>> ObterPorId(int id);
-        Message Cadastrar(RecursoDto recurso);
-        Message Atualizar(RecursoDto recurso);
-        Message Remover(RecursoDto recurso);
+        Task<Message> Cadastrar(RecursoDto recurso);
+        Task<Message> Atualizar(RecursoDto recurso);
+        Task<Message> Remover(RecursoDto recurso);
     }
 }

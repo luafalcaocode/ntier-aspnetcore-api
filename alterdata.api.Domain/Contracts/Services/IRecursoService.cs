@@ -10,8 +10,8 @@ namespace alterdata.api.Domain.Contracts.Services
     {
         Task<IEnumerable<Recurso>> ObterTodos();
         Task<Recurso> ObterPorId(int id);
-        void Cadastrar(Recurso recurso);
-        void Atualizar(Recurso recurso);
-        void Remover(Recurso recurso);
+        Task Cadastrar(Recurso recurso);
+        Task Atualizar(Recurso recurso);
+        Task Remover(Recurso recurso);
     }
 }

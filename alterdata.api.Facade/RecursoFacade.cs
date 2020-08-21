@@ -67,13 +67,13 @@ namespace alterdata.api.Facade
 
             return message;
         }
-        public Message Cadastrar(RecursoDto recurso)
+        public async Task<Message> Cadastrar(RecursoDto recurso)
         {
             var message = new Message();
 
             try
             {
-                this.servico.Cadastrar(this.mapper.Map<Recurso>(recurso));
+                await this.servico.Cadastrar(this.mapper.Map<Recurso>(recurso));
                 message.Ok();
             }
             catch (Exception exception)
@@ -83,13 +83,13 @@ namespace alterdata.api.Facade
 
             return message;
         }
-        public Message Atualizar(RecursoDto recurso)
+        public async Task<Message> Atualizar(RecursoDto recurso)
         {
             var message = new Message();
 
             try
             {
-                this.servico.Atualizar(this.mapper.Map<Recurso>(recurso));
+                await this.servico.Atualizar(this.mapper.Map<Recurso>(recurso));
                 message.Ok();
             }
             catch (Exception exception)
@@ -99,13 +99,13 @@ namespace alterdata.api.Facade
 
             return message;
         }
-        public Message Remover(RecursoDto recurso)
+        public async Task<Message> Remover(RecursoDto recurso)
         {
             var message = new Message();
 
             try
             {
-                this.servico.Remover(this.mapper.Map<Recurso>(recurso));
+                await this.servico.Remover(this.mapper.Map<Recurso>(recurso));
                 message.Ok();
             }
             catch (Exception exception)
