@@ -15,6 +15,7 @@ Antes de configurar o projeto certifique-se de ter as configurações abaixo ins
 + Instalar o Visual Studio 2019 ou o Visual Studio Code
 + Ter acesso de administrador na máquina
 + Configurar uma variável de ambiente no sistema operacional como administrador com o nome **SECRET** e um valor  (isto será usado para autenticação JWT durante login e acesso aos endpoints protegidos)
++ Instalar o controle de versão GIT
 
 ## Configurando o projeto:
 
