@@ -8,6 +8,8 @@ https://localhost:44332/swagger/index.html
 
 ## Pré-requisitos:
 
+Antes de configurar o projeto certifique-se de ter as configurações abaixo instaladas no seu ambiente.
+
 + Instalar o .NET Core SDK 3.1.5
 + Instalar o PostgreSQL 2.1.4
 + Instalar o Visual Studio 2019 ou o Visual Studio Code
@@ -16,12 +18,16 @@ https://localhost:44332/swagger/index.html
 
 ## Configurando o projeto:
 
-1. Clonar o repositório no GIT
-2. Abrir o projeto no visual studio
-3. Alterar a string de conexão do arquivo **appSettings.json** para apontar para as configurações da sua máquina com um servidor PostgreSQL configurado (configurar a chave **PostgreSQLConnection** do arquivo);
+Siga os passos abaixo para rodar o projeto.
+
+1. Clone este repositório utilizando o GIT para um diretório na sua máquina: **git clone** https://github.com/luafalcaocode/alterdata-aspnetcore-api.git
+2. Abra o projeto no Visual Studio 2019.
+3. Altere a string de conexão do arquivo **appSettings.json** para apontar para as configurações da sua máquina com um servidor PostgreSQL configurado (configurar a chave **PostgreSQLConnection** do arquivo);
 4. Abrir o console do Visual Studio (navegue até Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes) ou o interpretador de comandos do sistema apontando para o projeto principal (altedata.api.Web) e digite o seguinte comando para gerar a estrutura do banco de dados: **update-database**
 
 **Obs.:** Se o comando update-database não for reconhecido então será necessário configurar o recurso **migrations** digitando o seguinte comando no console apontando para o projeto principal: **dotnet tool install --global dotnet-ef**
+
+Alternativamente você pode rodar o projeto utilizando o Visual Studio Code ou outra ferramenta executando os comandos da .NET CLI para rodar o projeto. 
 
 5. Pressione F5 
 
