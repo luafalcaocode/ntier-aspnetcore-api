@@ -52,9 +52,9 @@ As regras e entidades de negócio estão escritas em português para facilitar a
 
 ## Contato:
 
-Em caso de dúvidas para fazer a configuração do projeto no seu ambiente, entre em contato comigo pelos meios de contato:
+Em caso de dúvidas para fazer a configuração do projeto no seu ambiente, entre em contato comigo pelos meios de contato abaixo:
 
 E-mail: lpjfalcao@gmail.com ou lcodeveloper@outlook.com
 
-Cel.: (21) 990238300
+Cel.: (21) 99023-8300
 
