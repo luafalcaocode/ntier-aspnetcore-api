@@ -56,5 +56,7 @@ Em caso de dúvidas para fazer a configuração do projeto no seu ambiente, entr
 
 E-mail: lpjfalcao@gmail.com ou lcodeveloper@outlook.com
 
-Cel.: (21) 99023-8300
+Whats App: (21) 99023-8300
+
+LinkedIn: https://www.linkedin.com/in/luafalcao/?locale=pt_BR
 
