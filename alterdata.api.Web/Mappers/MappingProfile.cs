@@ -26,6 +26,9 @@ namespace alterdata.api.Web.Mappers
             #region Funcionario
             CreateMap<FuncionarioDto, Funcionario>();
             CreateMap<Funcionario, FuncionarioDto>();
+
+            CreateMap<FuncionarioDto, Usuario>();
+            CreateMap<Usuario, FuncionarioDto>();
             #endregion
 
             #region Recurso
