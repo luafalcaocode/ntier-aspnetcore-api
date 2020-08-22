@@ -9,7 +9,20 @@ namespace alterdata.api.Persistence.Repositories
     public class RepositoryManager : IRepositoryManager
     {
         private RepositoryContext context;
+        private IFuncionarioRepository funcionario;
         private IRecursoRepository recurso;
+
+        public IFuncionarioRepository Funcionario 
+        {
+            get 
+            {
+                if (this.funcionario == null) {
+                    this.funcionario = RepositoryFactory.Create(RepositoryTypeEnum.Funcionario, this.context);
+                }
+
+                return this.funcionario;
+            }
+        }
 
         public IRecursoRepository Recurso 
         {

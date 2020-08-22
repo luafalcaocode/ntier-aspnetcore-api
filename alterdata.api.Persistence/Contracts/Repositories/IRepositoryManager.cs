@@ -7,7 +7,9 @@ namespace alterdata.api.Persistence.Contracts.Repositories
 {
     public interface IRepositoryManager
     {
+        IFuncionarioRepository Funcionario { get; }
         IRecursoRepository Recurso { get; }
+
         Task SaveAsync();
     }
 }

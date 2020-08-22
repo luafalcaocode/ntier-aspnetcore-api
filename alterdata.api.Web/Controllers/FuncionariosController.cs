@@ -1,5 +1,5 @@
 using alterdata.api.Facade.Contracts;
-using alterdata.api.Persistence.DataTransferObjects.Recurso;
+using alterdata.api.Persistence.DataTransferObjects.Funcionario;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -7,26 +7,26 @@ using System.Threading.Tasks;
 namespace alterdata.api.Web.Controllers
 {
     [ApiController]
-    [Route("api/v1/recursos")]
-    [Authorize]
-    public class RecursosController : ControllerBase
+    [Route("api/v1/funcionarios")]
+    public class FuncionariosController : ControllerBase
     {
-        private IRecursoFacade facade;
-
-        public RecursosController(IRecursoFacade facade)
+        private IFuncionarioFacade facade;
+        public FuncionariosController(IFuncionarioFacade facade)
         {
             this.facade = facade;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetRecursos()
+        [Authorize(Roles = "Administrador")]
+        public async Task<IActionResult> GetFuncionarios()
         {
             var message = await this.facade.ObterTodos();
             return StatusCode(message.StatusCode, message);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetRecursoPorId(int id)
+        [Authorize(Roles = "Administrador")]
+        public async Task<IActionResult> GetFuncionarioPorId(int id)
         {
             var message = await this.facade.ObterPorId(id);
             return StatusCode(message.StatusCode, message);
@@ -34,25 +34,25 @@ namespace alterdata.api.Web.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Administrador")]
-        public async Task<IActionResult> Post(RecursoDto recursoDto)
+        public async Task<IActionResult> Post(FuncionarioDto funcionarioDto)
         {
-            var message = await this.facade.Cadastrar(recursoDto);
+            var message = await this.facade.Cadastrar(funcionarioDto);
             return StatusCode(message.StatusCode, message);
         }
 
         [HttpPut]
         [Authorize(Roles = "Administrador")]
-        public async Task<IActionResult> Update(RecursoDto recursoDto)
+        public async Task<IActionResult> Update(FuncionarioDto funcionarioDto)
         {
-            var message = await this.facade.Atualizar(recursoDto);
+            var message = await this.facade.Atualizar(funcionarioDto);
             return StatusCode(message.StatusCode, message);
         }
 
         [HttpDelete]
         [Authorize(Roles = "Administrador")]
-        public async Task<IActionResult> Delete(RecursoDto recursoDto)
+        public async Task<IActionResult> Delete(FuncionarioDto funcionarioDto)
         {
-            var message = await this.facade.Remover(recursoDto);
+            var message = await this.facade.Remover(funcionarioDto);
             return StatusCode(message.StatusCode, message);
         }
     }

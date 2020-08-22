@@ -4,6 +4,7 @@ using alterdata.api.Persistence.DataTransferObjects.Usuario;
 using alterdata.api.Persistence.Entities;
 using alterdata.api.Shared.Utils;
 using alterdata.api.Persistence.DataTransferObjects.Recurso;
+using alterdata.api.Persistence.DataTransferObjects.Funcionario;
 
 namespace alterdata.api.Web.Mappers
 {
@@ -20,6 +21,11 @@ namespace alterdata.api.Web.Mappers
             CreateMap<UsuarioAutenticacaoDto, Usuario>()
                 .ForMember(usuarioEntity => usuarioEntity.UserName, option => option.MapFrom(usuarioDto => usuarioDto.Email));
 
+            #endregion
+
+            #region Funcionario
+            CreateMap<FuncionarioDto, Funcionario>();
+            CreateMap<Funcionario, FuncionarioDto>();
             #endregion
 
             #region Recurso
