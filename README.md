@@ -51,7 +51,7 @@ O cálculo da data e hora do voto foi realizado levado em consideração que o s
 - **Região de Fernando de Noronha:** 1 hora adiantada em relação ao fuso horário de Brasília
 - **Região da Amazônia:** 1 hora de atraso em relação ao fuso horário de Brasília
 - **Região do Acre:** 2 horas de atraso em relação ao fuso horário de Brasília
-- **Região de Brasilia:** Tomando como referência para calcular os demais horários
+- **Região de Brasilia:** Tomado como referência para calcular os demais horários
 
 ## Convenção de nomeclaturas
 
