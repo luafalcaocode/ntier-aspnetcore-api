@@ -27,13 +27,13 @@ namespace alterdata.api.Facade
             this.mapper = mapper;
         }
 
-        public async Task<Message> Cadastrar(VotacaoCadastroDto voto)
+        public async Task<Message> Votar(VotacaoCadastroDto votoDto)
         {
             var message = new Message();
 
             try 
             {
-                var funcionario = await this.funcionarioService.ObterPorId(voto.FuncionarioId);
+                var funcionario = await this.funcionarioService.ObterPorId(votoDto.FuncionarioId);
                 
                 if (funcionario == null)
                 {
@@ -43,8 +43,19 @@ namespace alterdata.api.Facade
                     return message;
                 }
 
-                voto.DataHora = this.votacaoService.ObterHoraDoVotoPorRegiao(funcionario.Filial);
-                await this.votacaoService.Cadastrar(this.mapper.Map<Votacao>(voto));
+                if (await this.votacaoService.VerificarSeFuncionarioJaVotou(funcionario.FuncionarioId))
+                {
+                    message.Validations.Add($"O funcionário {funcionario.Nome} com id {funcionario.FuncionarioId} já votou em um recurso e portanto não poderá votar novamente.");
+                    message.BadRequest();
+
+                    return message;
+                }
+
+                var dataHoraDaVotacao = this.votacaoService.ObterDataHoraDoVotoPorRegiao(funcionario.UfDaFilialOndeTrabalha);
+                var voto = this.mapper.Map<Votacao>(votoDto);
+                voto.DataHora = dataHoraDaVotacao;
+
+                await this.votacaoService.Cadastrar(voto);
                 
                 message.Created();
             }

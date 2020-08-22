@@ -30,7 +30,7 @@ namespace alterdata.api.Persistence.Contexts
         }
 
         public DbSet<Recurso> Recursos { get; set; }
-        public DbSet<Votacao> Votacao { get; set; }
-        public DbSet<Funcionario> Funcionario { get; set; }
+        public DbSet<Votacao> Votacoes { get; set; }
+        public DbSet<Funcionario> Funcionarios { get; set; }
     }
 }

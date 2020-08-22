@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using alterdata.api.Domain.Contracts.Services;
 using alterdata.api.Persistence.Contracts.Repositories;
@@ -29,7 +30,7 @@ namespace alterdata.api.Domain.Services
             return await this.repositorio.Votacao.ObterTodos();
         }
 
-        public DateTime ObterHoraDoVotoPorRegiao(string filial)
+        public DateTime ObterDataHoraDoVotoPorRegiao(string filial)
         {
             FusoHorarioUtils fuso = new FusoHorarioUtils();
 
@@ -42,6 +43,13 @@ namespace alterdata.api.Domain.Services
             }
 
             return DateTime.Now;
+        }
+
+        public async Task<bool> VerificarSeFuncionarioJaVotou(int funcionarioId)
+        {
+            var votos = await this.repositorio.Votacao.ObterTodos();
+
+            return votos.Where(voto => voto.FuncionarioId.Equals(funcionarioId)).Any();
         }
     }
 }

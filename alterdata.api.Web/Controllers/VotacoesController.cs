@@ -28,7 +28,7 @@ namespace alterdata.api.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(VotacaoCadastroDto votacaoDto)
         {
-            var message = await this.facade.Cadastrar(votacaoDto);
+            var message = await this.facade.Votar(votacaoDto);
             return StatusCode(message.StatusCode, message);
         }
         

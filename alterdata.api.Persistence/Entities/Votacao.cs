@@ -1,7 +1,9 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace alterdata.api.Persistence.Entities
 {
+    [Table("Votacao")]
     public class Votacao
     {
         public int VotacaoId { get; set; }

@@ -11,6 +11,6 @@ namespace alterdata.api.Facade.Contracts
     public interface IVotacaoFacade
     {
           Task<Message<IEnumerable<VotacaoDto>>> ObterTodos();
-          Task<Message> Cadastrar(VotacaoCadastroDto voto);
+          Task<Message> Votar(VotacaoCadastroDto voto);
     }
 }

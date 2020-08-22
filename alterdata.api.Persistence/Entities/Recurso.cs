@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace alterdata.api.Persistence.Entities
 {
+    [Table("Recurso")]
     public class Recurso 
     {
         public int RecursoId { get; set; }

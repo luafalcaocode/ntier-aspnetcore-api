@@ -11,6 +11,7 @@ namespace alterdata.api.Domain.Contracts.Services
     {
         Task<IEnumerable<Votacao>> ObterTodos();
         Task Cadastrar(Votacao voto);
-        DateTime ObterHoraDoVotoPorRegiao(string filial);
+        Task<bool> VerificarSeFuncionarioJaVotou(int funcionarioId);
+        DateTime ObterDataHoraDoVotoPorRegiao(string filial);
     }
 }
