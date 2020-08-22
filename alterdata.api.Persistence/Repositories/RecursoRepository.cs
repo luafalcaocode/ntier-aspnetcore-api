@@ -19,7 +19,7 @@ namespace alterdata.api.Persistence.Repositories
         public async Task<IEnumerable<Recurso>> ObterTodos()
         {
             return await FindAll()
-            .OrderBy(recurso => recurso.NumeroDeVotos)
+            .OrderByDescending(recurso => recurso.NumeroDeVotos)
             .ToListAsync();
 
         }

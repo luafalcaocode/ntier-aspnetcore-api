@@ -31,12 +31,12 @@ namespace alterdata.api.Facade
             {
                 var recursos = this.mapper.Map<IEnumerable<RecursoDto>>(await this.servico.ObterTodos());
             
-                if (recursos.Any())
+                if (!recursos.Any())
                 {
-                    message.Ok(recursos);
+                    message.NotFound();
                 }
 
-                message.NotFound();
+                message.Ok(recursos);
             }
             catch (Exception excecao)
             {
@@ -74,7 +74,7 @@ namespace alterdata.api.Facade
             try
             {
                 await this.servico.Cadastrar(this.mapper.Map<Recurso>(recurso));
-                message.Ok();
+                message.Created();
             }
             catch (Exception exception)
             {

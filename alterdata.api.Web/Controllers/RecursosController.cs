@@ -8,7 +8,6 @@ namespace alterdata.api.Web.Controllers
 {
     [ApiController]
     [Route("api/v1/recursos")]
-    [Authorize]
     public class RecursosController : ControllerBase
     {
         private IRecursoFacade facade;

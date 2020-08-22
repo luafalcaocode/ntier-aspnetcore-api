@@ -35,12 +35,12 @@ namespace alterdata.api.Facade
             {
                 var funcionarios = this.mapper.Map<IEnumerable<FuncionarioDto>>(await this.servico.ObterTodos());
 
-                if (funcionarios.Any())
+                if (!funcionarios.Any())
                 {
-                    message.Ok(funcionarios);
+                    message.NotFound();
                 }
 
-                message.NotFound();
+                message.Ok(funcionarios);                
             }
             catch (Exception excecao)
             {
@@ -57,12 +57,13 @@ namespace alterdata.api.Facade
             {
                 var funcionario = this.mapper.Map<FuncionarioDto>(await this.servico.ObterPorId(id));
 
-                if (funcionario != null)
+                if (funcionario == null)
                 {
-                    message.Ok(funcionario);
+                    message.NotFound();
                 }
 
-                message.NotFound();
+                message.Ok(funcionario);
+                
             }
             catch (Exception excecao)
             {
@@ -89,7 +90,7 @@ namespace alterdata.api.Facade
 
                     await this.servico.Cadastrar(funcionario);
 
-                    message.Ok();
+                    message.Created();
                 }
                 else
                 {

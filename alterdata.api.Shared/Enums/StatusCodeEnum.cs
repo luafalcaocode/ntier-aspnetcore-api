@@ -2,7 +2,8 @@ namespace alterdata.api.Shared.Enums
 {
     public enum StatusCodeEnum
     {
-        Ok = 201,
+        Ok = 200,
+        Created = 201,
         BadRequest = 400,
         InternalServerError = 500,
         NoContent = 204,

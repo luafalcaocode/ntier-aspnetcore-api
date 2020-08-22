@@ -31,6 +31,12 @@ namespace alterdata.api.Shared.Utils
             StatusCode = (int)StatusCodeEnum.Ok;
         }
 
+        public void Created()
+        {
+            Success = true;
+            StatusCode = (int)StatusCodeEnum.Created;
+        }
+
         public void Error(Exception error)
         {
             Success = false;
@@ -70,6 +76,12 @@ namespace alterdata.api.Shared.Utils
         public IList<string> Validations = new List<string>();
         public int StatusCode { get; set; }
         public Exception Exception { get; set; }
+
+        public void Created()
+        {
+            Success = true;
+            StatusCode = (int)StatusCodeEnum.Created;
+        }
 
         public void Ok()
         {
