@@ -44,17 +44,19 @@ Em caso de problemas para executar o projeto, tente as seguintes opções:
 
 + Se o projeto de testes não sinalizar o status dos testes executados, rode o comando **dotnet test** no console do Visual Studio para rodar o projeto do NUnit manualmente.
 
-## Convenção de nomeclaturas
-
-As regras e entidades de negócio estão escritas em português para facilitar a identificação. As demais partes do código foram mantidadas em inglês. Padrões de projeto, quando necessário, foram utilizados com sufixos para facilitar a identificação e permitir um vocabulário comum entre os desenvolvedores no projeto.
-
 ## Cálculo do Fuso Horário ao registrar Data e Hora 
 
 O cálculo da data e hora do voto foi realizado levado em consideração que o sistema será implantado em um servidor que fica localizado na matriz da Alterdata, na cidade de Teresópolis, que usa o fuso horário em relação à região de Brasilia. Através da UF da filial onde o funcionário trabalha (que é informada durante o cadastro do funcionário) foi feito um mapeamento do fuso horário daquela região, e tomando o fuso horário de Brasilia como referência foi calculado a diferença das horas:
 
-- Região de Fernando de Noronha: 1 hora adiantado em relação ao fuso horário de Brasília
-- Região da Amazônia: 1 hora de atraso em relação ao fuso horário de Brasília
-- Região do Acre: 2 horas de atraso em relação ao fuso horário de Brasília
+- **Região de Fernando de Noronha:** 1 hora adiantada em relação ao fuso horário de Brasília
+- **Região da Amazônia:** 1 hora de atraso em relação ao fuso horário de Brasília
+- **Região do Acre:** 2 horas de atraso em relação ao fuso horário de Brasília
+- **Região de Brasilia:** Tomando como referência para calcular os demais horários
+
+## Convenção de nomeclaturas
+
+As regras e entidades de negócio estão escritas em português para facilitar a identificação. As demais partes do código foram mantidadas em inglês. Padrões de projeto, quando necessário, foram utilizados com sufixos para facilitar a identificação e permitir um vocabulário comum entre os desenvolvedores no projeto.
+
 
 ## Tecnologias utilizadas
 
