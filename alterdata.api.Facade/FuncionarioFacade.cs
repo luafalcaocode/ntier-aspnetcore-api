@@ -1,6 +1,8 @@
+using alterdata.api.Domain.Contracts.Adapters;
 using alterdata.api.Domain.Contracts.Services;
 using alterdata.api.Facade.Contracts;
 using alterdata.api.Persistence.DataTransferObjects.Funcionario;
+using alterdata.api.Persistence.DataTransferObjects.Usuario;
 using alterdata.api.Persistence.Entities;
 using alterdata.api.Shared.Utils;
 
@@ -15,22 +17,24 @@ namespace alterdata.api.Facade
     public class FuncionarioFacade : IFuncionarioFacade
     {
         private IFuncionarioService servico;
+        private IAuthenticationManager authenticationManager;
         private IMapper mapper;
 
-        public FuncionarioFacade(IFuncionarioService servico, IMapper mapper)
+        public FuncionarioFacade(IFuncionarioService servico, IAuthenticationManager authenticationManager, IMapper mapper)
         {
             this.servico = servico;
+            this.authenticationManager = authenticationManager;
             this.mapper = mapper;
         }
 
-           public async Task<Message<IEnumerable<FuncionarioDto>>> ObterTodos()
+        public async Task<Message<IEnumerable<FuncionarioDto>>> ObterTodos()
         {
             var message = new Message<IEnumerable<FuncionarioDto>>();
 
             try
             {
                 var funcionarios = this.mapper.Map<IEnumerable<FuncionarioDto>>(await this.servico.ObterTodos());
-            
+
                 if (funcionarios.Any())
                 {
                     message.Ok(funcionarios);
@@ -73,7 +77,14 @@ namespace alterdata.api.Facade
 
             try
             {
-                await this.servico.Cadastrar(this.mapper.Map<Funcionario>(funcionario));
+                var novoUsuario = this.mapper.Map<Usuario>(funcionario);
+                var usuarioCadastrado = await this.authenticationManager.RegisterUser(novoUsuario);
+                var novoFuncionario = this.mapper.Map<Funcionario>(funcionario);
+              
+                novoFuncionario.UsuarioId = usuarioCadastrado.Data.Id;
+
+                await this.servico.Cadastrar(novoFuncionario);
+                
                 message.Ok();
             }
             catch (Exception exception)
