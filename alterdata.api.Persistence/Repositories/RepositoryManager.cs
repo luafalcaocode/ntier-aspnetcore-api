@@ -11,6 +11,7 @@ namespace alterdata.api.Persistence.Repositories
         private RepositoryContext context;
         private IFuncionarioRepository funcionario;
         private IRecursoRepository recurso;
+        private IVotacaoRepository votacao;
 
         public IFuncionarioRepository Funcionario 
         {
@@ -34,6 +35,19 @@ namespace alterdata.api.Persistence.Repositories
                 }
 
                 return this.recurso;
+            }
+        }
+
+        public IVotacaoRepository Votacao 
+        {
+            get 
+            {
+                if (this.votacao == null)
+                {
+                    this.votacao = RepositoryFactory.Create(RepositoryTypeEnum.Votacao, this.context);
+                }
+
+                return this.votacao;
             }
         }
         public RepositoryManager(RepositoryContext context)

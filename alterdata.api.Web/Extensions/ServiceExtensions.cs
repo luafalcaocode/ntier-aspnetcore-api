@@ -60,6 +60,7 @@ namespace alterdata.api.Web.Extensions
             services.AddScoped<IAuthenticationFacade, AuthenticationFacade>();
             services.AddScoped<IRecursoFacade, RecursoFacade>();
             services.AddScoped<IFuncionarioFacade, FuncionarioFacade>();
+            services.AddScoped<IVotacaoFacade, VotacaoFacade>();
         }
 
         public static void ConfigureAdapters(this IServiceCollection services)
@@ -71,6 +72,7 @@ namespace alterdata.api.Web.Extensions
         {
             services.AddScoped<IRecursoService, RecursoService>(); 
             services.AddScoped<IFuncionarioService, FuncionarioService>();
+            services.AddScoped<IVotacaoService, VotacaoService>();
         }
 
         public static void ConfigureRepositoryManager(this IServiceCollection services)

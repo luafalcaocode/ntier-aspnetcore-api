@@ -32,15 +32,15 @@ namespace alterdata.api.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Administrador")]
-        public async Task<IActionResult> Post(RecursoDto recursoDto)
+       // [Authorize(Roles = "Administrador")]
+        public async Task<IActionResult> Post(RecursoCadastroDto recursoDto)
         {
             var message = await this.facade.Cadastrar(recursoDto);
             return StatusCode(message.StatusCode, message);
         }
 
         [HttpPut]
-        [Authorize(Roles = "Administrador")]
+        // [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Update(RecursoDto recursoDto)
         {
             var message = await this.facade.Atualizar(recursoDto);
@@ -48,7 +48,7 @@ namespace alterdata.api.Web.Controllers
         }
 
         [HttpDelete]
-        [Authorize(Roles = "Administrador")]
+        // [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Delete(RecursoDto recursoDto)
         {
             var message = await this.facade.Remover(recursoDto);

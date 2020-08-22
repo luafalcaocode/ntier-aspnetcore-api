@@ -9,6 +9,7 @@ namespace alterdata.api.Persistence.Contracts.Repositories
     {
         IFuncionarioRepository Funcionario { get; }
         IRecursoRepository Recurso { get; }
+        IVotacaoRepository Votacao { get; }
 
         Task SaveAsync();
     }

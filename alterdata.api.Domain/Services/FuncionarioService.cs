@@ -1,7 +1,9 @@
 using alterdata.api.Domain.Contracts.Services;
 using alterdata.api.Persistence.Contracts.Repositories;
 using alterdata.api.Persistence.Entities;
-
+using alterdata.api.Shared.Enums;
+using alterdata.api.Shared.Utils;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -40,7 +42,5 @@ namespace alterdata.api.Domain.Services
             this.repositorio.Funcionario.Remover(funcionario);
             await this.repositorio.SaveAsync();
         }
-
-
     }
 }

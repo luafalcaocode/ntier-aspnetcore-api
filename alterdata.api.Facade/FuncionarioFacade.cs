@@ -38,6 +38,7 @@ namespace alterdata.api.Facade
                 if (!funcionarios.Any())
                 {
                     message.NotFound();
+                    return message;
                 }
 
                 message.Ok(funcionarios);                
@@ -60,6 +61,7 @@ namespace alterdata.api.Facade
                 if (funcionario == null)
                 {
                     message.NotFound();
+                    return message;
                 }
 
                 message.Ok(funcionario);
@@ -72,10 +74,9 @@ namespace alterdata.api.Facade
 
             return message;
         }
-        public async Task<Message> Cadastrar(FuncionarioDto funcionarioDto)
+        public async Task<Message> Cadastrar(FuncionarioCadastroDto funcionarioDto)
         {
             var message = new Message();
-
 
             try
             {

@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Dictionaries\" />
     <Folder Include="Formatters\" />
-    <Folder Include="Enums\" />
   </ItemGroup>
 
 </Project>

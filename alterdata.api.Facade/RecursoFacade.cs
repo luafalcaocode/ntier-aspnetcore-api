@@ -34,6 +34,7 @@ namespace alterdata.api.Facade
                 if (!recursos.Any())
                 {
                     message.NotFound();
+                    return message;
                 }
 
                 message.Ok(recursos);
@@ -53,12 +54,13 @@ namespace alterdata.api.Facade
             {
                 var recurso = this.mapper.Map<RecursoDto>(await this.servico.ObterPorId(id));
 
-                if (recurso != null)
+                if (recurso == null)
                 {
-                    message.Ok(recurso);
+                    message.NotFound();
+                    return message;
                 }
 
-                message.NotFound();
+                message.Ok(recurso);
             }
             catch (Exception excecao)
             {
@@ -67,7 +69,7 @@ namespace alterdata.api.Facade
 
             return message;
         }
-        public async Task<Message> Cadastrar(RecursoDto recurso)
+        public async Task<Message> Cadastrar(RecursoCadastroDto recurso)
         {
             var message = new Message();
 

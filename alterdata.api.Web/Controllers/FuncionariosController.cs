@@ -17,7 +17,7 @@ namespace alterdata.api.Web.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Administrador")]
+      //  [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> GetFuncionarios()
         {
             var message = await this.facade.ObterTodos();
@@ -25,7 +25,7 @@ namespace alterdata.api.Web.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Administrador")]
+      //  [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> GetFuncionarioPorId(int id)
         {
             var message = await this.facade.ObterPorId(id);
@@ -33,15 +33,15 @@ namespace alterdata.api.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Administrador")]
-        public async Task<IActionResult> Post(FuncionarioDto funcionarioDto)
+       // [Authorize(Roles = "Administrador")]
+        public async Task<IActionResult> Post(FuncionarioCadastroDto funcionarioDto)
         {
             var message = await this.facade.Cadastrar(funcionarioDto);
             return StatusCode(message.StatusCode, message);
         }
 
         [HttpPut]
-        [Authorize(Roles = "Administrador")]
+       // [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Update(FuncionarioDto funcionarioDto)
         {
             var message = await this.facade.Atualizar(funcionarioDto);
@@ -49,7 +49,7 @@ namespace alterdata.api.Web.Controllers
         }
 
         [HttpDelete]
-        [Authorize(Roles = "Administrador")]
+       // [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Delete(FuncionarioDto funcionarioDto)
         {
             var message = await this.facade.Remover(funcionarioDto);

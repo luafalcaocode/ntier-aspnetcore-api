@@ -15,7 +15,7 @@ namespace alterdata.api.Persistence.Factories
                 case RepositoryTypeEnum.Recurso:
                     return new RecursoRepository(context);
                 case RepositoryTypeEnum.Votacao:
-                    return null;
+                    return new VotacaoRepository(context);
             }
 
             return null;
