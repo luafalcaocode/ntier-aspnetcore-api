@@ -9,6 +9,7 @@ using alterdata.api.Domain.Contracts.Adapters;
 using alterdata.api.Persistence.Entities;
 using alterdata.api.Shared.Utils;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
@@ -26,9 +27,9 @@ namespace alterdata.api.Domain.Adapters
             this.configuration = configuration;
         }
 
-        public async Task<Message<Usuario>> RegisterUser(Usuario usuario)
+        public async Task<Message> RegisterUser(Usuario usuario)
         {
-            var message = new Message<Usuario>();
+            var message = new Message();
 
             var result = await this.userManager.CreateAsync(usuario, usuario.Senha);
 
@@ -44,11 +45,19 @@ namespace alterdata.api.Domain.Adapters
                 return message;
             }
 
-
-            await this.userManager.AddToRolesAsync(usuario, usuario.Perfis);
+            if (usuario.Perfis != null && usuario.Perfis.Count > 0)
+            {
+                await this.userManager.AddToRolesAsync(usuario, usuario.Perfis);
+            }
+            
             message.Ok();
 
             return message;
+        }
+
+        public async Task<Usuario> GetUserByUserName(string username)
+        {
+            return await this.userManager.FindByNameAsync(username);
         }
 
         public async Task<bool> ValidateUser(Usuario usuario)

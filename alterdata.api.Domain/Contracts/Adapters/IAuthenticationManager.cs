@@ -6,8 +6,9 @@ namespace alterdata.api.Domain.Contracts.Adapters
 {
     public interface IAuthenticationManager
     {
-        Task<Message<Usuario>> RegisterUser(Usuario usuario);
+        Task<Message> RegisterUser(Usuario usuario);
         Task<bool> ValidateUser(Usuario usuario);
+        Task<Usuario> GetUserByUserName(string username);
 
         Task<string> CreateToken();
         

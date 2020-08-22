@@ -23,14 +23,14 @@ namespace alterdata.api.Facade
             this.authenticationManager = authenticationManager;
         }
 
-        public async Task<Message<UsuarioCadastroDto>> RegisterUser(UsuarioCadastroDto usuarioDto)
+        public async Task<Message> RegisterUser(UsuarioCadastroDto usuarioDto)
         {
-            var message = new Message<UsuarioCadastroDto>();
+            var message = new Message();
 
             try
             {
                 var usuario = this.mapper.Map<Usuario>(usuarioDto);
-                return this.mapper.Map<Message<UsuarioCadastroDto>>(await this.authenticationManager.RegisterUser(usuario));
+                return await this.authenticationManager.RegisterUser(usuario);
             }
             catch(Exception excecao)
             {

@@ -8,7 +8,7 @@ namespace alterdata.api.Facade.Contracts
 {
     public interface IAuthenticationFacade
     {
-        Task<Message<UsuarioCadastroDto>> RegisterUser(UsuarioCadastroDto usuario);
+        Task<Message> RegisterUser(UsuarioCadastroDto usuarioDto);
         Task<Message<string>> Login(UsuarioAutenticacaoDto usuarioDto);
     }
 }

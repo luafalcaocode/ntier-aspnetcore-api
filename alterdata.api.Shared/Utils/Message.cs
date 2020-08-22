@@ -38,10 +38,11 @@ namespace alterdata.api.Shared.Utils
             StatusCode = (int)StatusCodeEnum.InternalServerError;
         }
 
-        public void BadRequest()
+        public void BadRequest(IList<string> validations = null)
         {
             Success = false;
             StatusCode = (int)StatusCodeEnum.BadRequest;
+            Validations = validations != null ? validations : Validations;
         }
 
         public void NotFound()
@@ -99,6 +100,13 @@ namespace alterdata.api.Shared.Utils
         {
             Success = true;
             StatusCode = (int)StatusCodeEnum.NoContent;
+        }
+
+        public void BadRequest(IList<string> validations = null)
+        {
+            Success = false;
+            StatusCode = (int)StatusCodeEnum.BadRequest;
+            Validations = validations != null ? validations : Validations;
         }
     }
 }

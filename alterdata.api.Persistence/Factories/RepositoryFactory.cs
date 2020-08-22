@@ -11,7 +11,7 @@ namespace alterdata.api.Persistence.Factories
             switch(repositoryType)
             {
                 case RepositoryTypeEnum.Funcionario:
-                    return new RecursoRepository(context);
+                    return new FuncionarioRepository(context);
                 case RepositoryTypeEnum.Recurso:
                     return new RecursoRepository(context);
                 case RepositoryTypeEnum.Votacao:

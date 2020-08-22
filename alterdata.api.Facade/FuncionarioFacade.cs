@@ -71,21 +71,30 @@ namespace alterdata.api.Facade
 
             return message;
         }
-        public async Task<Message> Cadastrar(FuncionarioDto funcionario)
+        public async Task<Message> Cadastrar(FuncionarioDto funcionarioDto)
         {
             var message = new Message();
 
+
             try
             {
-                var novoUsuario = this.mapper.Map<Usuario>(funcionario);
-                var usuarioCadastrado = await this.authenticationManager.RegisterUser(novoUsuario);
-                var novoFuncionario = this.mapper.Map<Funcionario>(funcionario);
-              
-                novoFuncionario.UsuarioId = usuarioCadastrado.Data.Id;
+                var registro = await this.authenticationManager.RegisterUser(this.mapper.Map<Usuario>(funcionarioDto));
 
-                await this.servico.Cadastrar(novoFuncionario);
-                
-                message.Ok();
+                if (registro.Success)
+                {
+                    Usuario usuarioCadastrado = await this.authenticationManager.GetUserByUserName(funcionarioDto.Email);
+                    Funcionario funcionario = this.mapper.Map<Funcionario>(funcionarioDto);
+
+                    funcionario.UsuarioId = usuarioCadastrado.Id;
+
+                    await this.servico.Cadastrar(funcionario);
+
+                    message.Ok();
+                }
+                else
+                {
+                    message.BadRequest(registro.Validations);
+                }
             }
             catch (Exception exception)
             {
