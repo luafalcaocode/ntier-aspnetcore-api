@@ -63,7 +63,7 @@ O cálculo da data e hora do voto foi realizado levando em consideração que o 
 
 - Existem 2 permissões que são inseridas na tabela durante a criação do banco de dados (**Administrador** e **Todos**). O perfil **Administrador** tem permissão para manter funcionários e recursos, enquanto que o perfil **Todos** tem permissão para votar e acessar o sistema. Ao cadastrar um funcionário você pode informar um desses dois perfis na propriedade **Perfis** do JSON usado para cadastro (consulte o Swagger para ver o formato dos dados esperados pelo servidor).
 
-- Para utilizar alguns endpoints é necessário fazer autenticação através do endpoint de login informando o usuário e senha após o funcionário ter sido cadastrdado. Com isso, a cada requisição é preciso informar o token de segurança no cabeçalho Authorization. Isso pode ser feito via Postman durante os testes.
+- Para utilizar alguns endpoints é necessário fazer autenticação através do endpoint de login informando o usuário e senha do funcionário após ter sido cadastrdado. Com isso, a cada requisição é preciso informar o token de segurança que será obtido no login e inserir o token no cabeçalho Authorization de cada requisição. Isso pode ser feito via ferramenta Postman durante os testes.
 
 ## Convenção de nomeclaturas
 
