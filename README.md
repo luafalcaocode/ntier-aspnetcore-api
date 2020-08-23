@@ -24,9 +24,12 @@ Siga os passos abaixo para rodar o projeto.
 1. Clone este repositório utilizando o GIT para um diretório na sua máquina: **git clone** https://github.com/luafalcaocode/alterdata-aspnetcore-api.git
 2. Abra o projeto no Visual Studio 2019.
 3. Altere a string de conexão **PostgreSQLConnection** configurada no arquivo **appSettings.json** para apontar para as configurações da sua máquina com um servidor PostgreSQL;
-4. Abra o console do Visual Studio (**navegue até Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes**), verifique se o projeto principal está selecionado (**alterdata.api.Web**) e execute o seguinte comando para gerar a estrutura do banco de dados: **Update-Database**
+4. Abra o console do Visual Studio (**navegue até Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes**), verifique se o projeto principal está selecionado (**alterdata.api.Web**) e execute os dois comandos a seguir para configurar e gerar a estrutura do banco de dados:
 
-**Obs.:** Se o comando **Update-Database** não for reconhecido então será necessário configurar o recurso **migrations** executando o seguinte comando no console: **dotnet tool install --global dotnet-ef**. Em seguida, execute novamente o comando **Update-Database**.
+- **Add-Migration InitialCreate** 
+- **Update-Database**
+
+**Obs.:** Se os comandos acima não forem reconhecidos no seu sistema então será necessário configurar o recurso **migrations** executando o seguinte comando no console: **dotnet tool install --global dotnet-ef**. Em seguida, execute novamente os comandos acima.
 
 Alternativamente você pode rodar o projeto utilizando o Visual Studio Code ou outra ferramenta executando os comandos da .NET CLI para rodar o projeto. 
 
