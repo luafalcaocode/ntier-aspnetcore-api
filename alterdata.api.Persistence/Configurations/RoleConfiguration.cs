@@ -15,12 +15,12 @@ namespace alterdata.api.Persistence.Configurations
             builder.HasData(new IdentityRole
             {
                 Name = "Administrador",
-                NormalizedName = "Administrador"
+                NormalizedName = "ADMINISTRADOR"
             },
             new IdentityRole
             {
                 Name = "Todos",
-                NormalizedName = "Todos"
+                NormalizedName = "TODOS"
             });
         }
     }
