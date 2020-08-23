@@ -8,7 +8,7 @@ https://localhost:44332/swagger/index.html
 
 ## Pré-requisitos:
 
-Antes de configurar o projeto certifique-se de ter as configurações abaixo instaladas no seu ambiente.
+Antes de executar o projeto certifique-se de ter as configurações abaixo instaladas no seu ambiente.
 
 + .NET Core SDK 3.1.5 
 + PostgreSQL 2.1.4
