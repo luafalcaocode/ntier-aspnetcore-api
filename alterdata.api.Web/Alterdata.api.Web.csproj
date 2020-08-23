@@ -13,11 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200820165443_CreationOfBusinessEntities.cs" />
-    <Compile Remove="Migrations\20200820165443_CreationOfBusinessEntities.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\alterdata.api.Domain\Alterdata.api.Domain.csproj" />
     <ProjectReference Include="..\alterdata.api.Facade\Alterdata.api.Facade.csproj" />
   </ItemGroup>
