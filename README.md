@@ -44,7 +44,7 @@ Em caso de problemas para executar o projeto, tente as seguintes opções:
 
 ## Cálculo do Fuso Horário ao registrar data e hora 
 
-O cálculo da data e hora do voto foi realizado levado em consideração que o sistema será implantado em um servidor que fica localizado na matriz da Alterdata, na cidade de Teresópolis, que usa o fuso horário em relação à região de Brasilia. Através da UF da filial onde o funcionário trabalha (que é informada durante o cadastro do funcionário) foi feito um mapeamento do fuso horário daquela região, e tomando o fuso horário de Brasilia como referência foi calculado a diferença das horas:
+O cálculo da data e hora do voto foi realizado levando em consideração que o sistema será implantado em um servidor que fica localizado na matriz da Alterdata, na cidade de Teresópolis, que usa o fuso horário em relação à região de Brasilia. Através da UF da filial onde o funcionário trabalha (que é informada durante o cadastro do funcionário) foi feito um mapeamento do fuso horário daquela região, e tomando o fuso horário de Brasilia como referência foi calculado a diferença das horas:
 
 - **Região de Fernando de Noronha:** 1 hora adiantada em relação ao fuso horário de Brasília
 - **Região da Amazônia:** 1 hora de atraso em relação ao fuso horário de Brasília
