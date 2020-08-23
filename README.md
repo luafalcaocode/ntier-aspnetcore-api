@@ -41,7 +41,7 @@ Alternativamente você pode rodar o projeto utilizando o Visual Studio Code ou o
 
 Em caso de problemas para executar o projeto, tente as seguintes opções:
 
-+ Se ao rodar o projeto você visualizar uma mensagem de erro, verifique se o seu Antivírus está bloqueando a execução do projeto. O Avast, por exemplo, faz uma varredura ao iniciar a aplicação e só após sua conclusão é possível iniciar o projeto. 
++ Se ao rodar o projeto você visualizar uma mensagem de erro, verifique se o seu Antivírus está bloqueando a execução do projeto. O Avast, por exemplo, faz uma varredura ao iniciar a aplicação e só após sua conclusão é possível iniciar o projeto (nesse caso pressione F5 novamente). 
 
 + Se os projetos não forem carregados na solução, abra o Visual Studio e rode-o novamente com permissão de Administrador.
 
