@@ -10,7 +10,7 @@ https://localhost:44332/swagger/index.html
 
 Antes de executar o projeto certifique-se de ter as configurações abaixo instaladas no seu ambiente.
 
-+ .NET Core SDK 3.1.5 
++ .NET Core SDK 3.1
 + PostgreSQL 2.1.4
 + Visual Studio 2019 ou o Visual Studio Code
 + Privilégios de administrador no Sistema Operacional
