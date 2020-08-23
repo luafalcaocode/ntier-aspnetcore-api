@@ -29,7 +29,7 @@ Siga os passos abaixo para rodar o projeto.
 4. Abra o console do Visual Studio (**navegue até Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes**), verifique se o projeto principal está selecionado (**alterdata.api.Web**) e execute os dois comandos a seguir para configurar e gerar a estrutura do banco de dados:
 
 - **Add-Migration InitialCreate** (este comando registra o modelo de dados e habilita a sincronização com a estrutura física)
-- **Update-Database** (este comando cria o banco de dados baseado na configuração do arquivo appsettings.json)
+- **Update-Database** (este comando cria o banco de dados baseado na configuração do arquivo **appsettings.json**)
 
 **Obs.:** Se os comandos acima não forem reconhecidos no seu sistema então será necessário configurar o recurso **migrations** executando o seguinte comando no console: **dotnet tool install --global dotnet-ef**. Em seguida, execute novamente os comandos acima.
 
@@ -61,7 +61,7 @@ O cálculo da data e hora do voto foi realizado levando em consideração que o 
 
 - Segundo a regra de negócio um usuário é um funcionário. Então através do cadastro de funcionários é criado automaticamente um usuário para ele. Alternativamente é possível cadastrar um usuário sem associá-lo a um funcionário utilizando outro endpoint. 
 
-- Existem 2 perfissões que são inseridas na tabela durante a criação do banco de dados (Administrador e Todos). O perfil Administrador tem permissão para manter funcionários e recursos, enquanto que o perfil Todos tem permissão para votar e acessar o sistema.
+- Existem 2 permissões que são inseridas na tabela durante a criação do banco de dados (**Administrador** e **Todos**). O perfil **Administrador** tem permissão para manter funcionários e recursos, enquanto que o perfil **Todos** tem permissão para votar e acessar o sistema. Ao cadastrar um funcionário você pode informar um desses dois perfis na propriedade **Perfis** do JSON usado para cadastro (consulte o Swagger para ver o formato dos dados esperados pelo servidor).
 
 - Para utilizar alguns endpoints é necessário fazer autenticação através do endpoint de login informando o usuário e senha após o funcionário ter sido cadastrdado. Com isso, a cada requisição é preciso informar o token de segurança no cabeçalho Authorization. Isso pode ser feito via Postman durante os testes.
 
