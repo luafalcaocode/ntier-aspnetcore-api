@@ -75,7 +75,7 @@ Para testar a API recomendo usar a ferramenta Postman. Na Pasta **docs/Exemplo d
 
 ## Tecnologias utilizadas
 
-- .NET Core 3.5.1
+- .NET Core 3.1
 -  Microsoft Identity Membership
 -  Entity Framework Core
 -  PostgreSQL 2.1.4
