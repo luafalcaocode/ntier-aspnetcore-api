@@ -9,7 +9,6 @@ namespace alterdata.api.Web.Controllers
 {
     [ApiController]
     [Route("api/v1/votacoes")]
-    [Authorize]
     public class VotacoesController : ControllerBase
     {
         private IVotacaoFacade facade;

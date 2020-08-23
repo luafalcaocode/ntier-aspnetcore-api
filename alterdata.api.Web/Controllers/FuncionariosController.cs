@@ -33,7 +33,6 @@ namespace alterdata.api.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Post(FuncionarioCadastroDto funcionarioDto)
         {
             var message = await this.facade.Cadastrar(funcionarioDto);
