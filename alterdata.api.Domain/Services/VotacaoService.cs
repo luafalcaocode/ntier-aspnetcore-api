@@ -21,8 +21,14 @@ namespace alterdata.api.Domain.Services
         public async Task Cadastrar(Votacao voto)
         {
             this.repositorio.Votacao.Cadastrar(voto);
-            await this.repositorio.SaveAsync();
+            var recursoVotado = await this.repositorio.Recurso.ObterPorId(voto.RecursoId);
+            if (recursoVotado != null)
+            {
+                recursoVotado.NumeroDeVotos++;
+                this.repositorio.Recurso.Atualizar(recursoVotado);
+            }
 
+            await this.repositorio.SaveAsync();
         }
 
         public async Task<IEnumerable<Votacao>> ObterTodos()
