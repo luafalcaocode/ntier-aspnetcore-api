@@ -26,8 +26,8 @@ Siga os passos abaixo para rodar o projeto.
 3. Altere a string de conexão **PostgreSQLConnection** configurada no arquivo **appSettings.json** para apontar para as configurações da sua máquina com um servidor PostgreSQL;
 4. Abra o console do Visual Studio (**navegue até Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes**), verifique se o projeto principal está selecionado (**alterdata.api.Web**) e execute os dois comandos a seguir para configurar e gerar a estrutura do banco de dados:
 
-**Add-Migration InitialCreate** 
-**Update-Database**
+- **Add-Migration InitialCreate** 
+- **Update-Database**
 
 **Obs.:** Se os comandos acima não forem reconhecidos no seu sistema então será necessário configurar o recurso **migrations** executando o seguinte comando no console: **dotnet tool install --global dotnet-ef**. Em seguida, execute novamente os comandos acima.
 
