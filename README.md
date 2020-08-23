@@ -69,6 +69,9 @@ O cálculo da data e hora do voto foi realizado levando em consideração que o 
 
 As regras e entidades de negócio estão escritas em português para facilitar a identificação. As demais partes do código foram mantidadas em inglês. Padrões de projeto, quando necessário, foram utilizados com sufixos para facilitar a identificação e permitir um vocabulário comum entre os desenvolvedores no projeto.
 
+## Testando a API
+
+Para testar a API recomendo usar a ferramenta Postman. Na Pasta **docs/Exemplo de Requisicoes a API** tem uma coleção de requisições que pode ser importada na ferramenta com os dados e endpoints configurados para consumir. Basta substituir o token no cabeçalho da requisição pelo token gerado na sua máquina para fazer a autenticação.
 
 ## Tecnologias utilizadas
 
